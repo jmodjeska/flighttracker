@@ -8,3 +8,4 @@ This project is aimed at building a web service that provides tracking service t
 * It has a method that responds to request for traffic information, returning data on all registered flights as indicated in the design specification
 * The FlighTracker response should contain data on flight name, coordinates (X, Y as relative to the Final Approach Start point), its speed and altitude.
 *  Web server that responds to external HTTP requests (GET) with the data as shown above and accepts HTTP GET calls to register aircrafts entering the airspace
+* See the [docs](https://github.com/jmodjeska/flighttracker/tree/master/docs) for further details
