@@ -1,6 +1,8 @@
 # FlightTracker
 Air traffic control simulator project for my Ruby class.
 
+![](https://github.com/jmodjeska/flighttracker/blob/master/docs/plane.png)
+
 ## Project Description
 This project is aimed at building a web service that provides tracking service to subscribers. 
 * It contains a properly operating simulator that simulates flights entering SeaTac airspace
