@@ -28,6 +28,6 @@ Entry speed range | 120 – 130 m/s
      {"flight":"AA876, "x":4200, “y”: 23004, “altitude”: 8000, “status”: “descent”},
      {"flight":"DL234, "x":8200, “y”: 1000, “altitude”: 8000, “status”: “final_approach”},
      {"flight":"AF133, "x":0, “y”: 15000, “altitude”: 8000, “status”: “landed”},
-   ]
+    ]
  }
  ```
