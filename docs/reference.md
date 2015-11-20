@@ -1,7 +1,7 @@
 # Reference
 
 Units of Measure  | meters, seconds
-------------- | -------------
+:------------- | :-------------
 Airspace Entry coordinates | x = 16000, y = 47000
 Length of standard descent trajectory | 65291 m
 Landing speed | 70 m/sec
