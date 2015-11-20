@@ -1,4 +1,4 @@
-# <img src="https://github.com/jmodjeska/flighttracker/blob/master/docs/plane.png" width=80px> FlightTracker
+# <img src="https://github.com/jmodjeska/flighttracker/blob/master/docs/plane.png" width=50px> FlightTracker
 Air traffic control simulator project for my Ruby class.
 
 ## Project Description
