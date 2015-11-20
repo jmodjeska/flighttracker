@@ -21,6 +21,7 @@ Entry speed range | 120 – 130 m/s
  * Y = 2.48E-14 * distance^4 - 2.5E-9 * distance^3 + 1.09E-4 * distance^2 - 0.4019 * distance + 47000
 * Flight statuses “descent”, “final_approach”, “landed”, “diverted”
 * Expected output in JSON format:
+
  ```
 {
   "aircrafts":[
