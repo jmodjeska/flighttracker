@@ -1,7 +1,7 @@
 # FlightTracker
 Air traffic control simulator project for my Ruby class.
 
-![](https://github.com/jmodjeska/flighttracker/blob/master/docs/plane.png =100px)
+<img src="https://github.com/jmodjeska/flighttracker/blob/master/docs/plane.png" width=100px>
 
 ## Project Description
 This project is aimed at building a web service that provides tracking service to subscribers. 
