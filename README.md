@@ -1,2 +1,2 @@
-# flighttracker
-Air traffic control simulator
+# FlightTracker
+Air traffic control simulator project for my Ruby class.
