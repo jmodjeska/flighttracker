@@ -8,4 +8,4 @@ Build a web service that provides tracking service to subscribers.
 * It has a method that responds to requests for traffic information, returning data on all registered flights as indicated in the design specification;
 * Its responses should contain data on flight names, coordinates (X, Y as relative to the Final Approach start point), its speed and altitude;
 *  It has a Web server that responds to external HTTP GET requests with the specified data, and accepts HTTP POST calls to register aircrafts entering the airspace;
-* See the [docs](https://github.com/jmodjeska/flighttracker/tree/master/docs) for further details.
+See the [docs](https://github.com/jmodjeska/flighttracker/tree/master/docs) for further details.
