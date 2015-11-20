@@ -3,9 +3,9 @@
 1. Develop FlightTracker application that registers every aircraft that enters the SeaTac airspace. FlightTracker is a web service. It receives service requests through its URL as HTTP GET calls.
 1. The service requests come in two flavors:
  * Airplane entry (e.g. http://<your_service_ip>/entry?flight=DL342&altitude=12000). This request comes when a new airplane enters the Seattle airspace. The following information comes with this request:
-   * Flight number (e.g. DL342)
-   * Altitude in meters (e.g. 12000)
-   * The time when receives the request is entered as the Time of Entry (TOE)
+    * Flight number (e.g. DL342)
+    * Altitude in meters (e.g. 12000)
+    * The time when receives the request is entered as the Time of Entry (TOE)
  * Flight tracking request (e.g. http://<your_service_ip>/tracking_info)
 1. FlightTracker service returns information on all airborne flights plus flights landed in the last 2 minutes
 1. For each aircraft it should calculate x, y position in relation to the Final Approach starting point (coordinates x=0, y = 0)
