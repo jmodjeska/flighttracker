@@ -1,7 +1,7 @@
 # FlightTracker
 Air traffic control simulator project for my Ruby class.
 
-### Project Description
+## Project Description
 This project is aimed at building a web service that provides tracking service to subscribers. 
 * It contains a properly operating simulator that simulates flights entering SeaTac airspace
 * It has a method that takes request for registration of an aircraft entering the airspace and makes registration records in the application database
