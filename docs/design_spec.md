@@ -1,6 +1,5 @@
 ## Design Specification
 
-#### Requirements
 1. Develop FlightTracker application that registers every aircraft that enters the SeaTac airspace. FlightTracker is a web service. It receives service requests through its URL as HTTP GET calls.
 1. The service requests come in two flavors:
  * Airplane entry (e.g. http://<your_service_ip>/entry?flight=DL342&altitude=12000). This request comes when a new airplane enters the Seattle airspace. The following information comes with this request:
@@ -27,21 +26,3 @@
     ]
  }
  ```
-
-#### Reference
-
-Units of Measure  | meters, seconds
-------------- | -------------
-Airspace Entry coordinates | x=16000, y = 47000
-Length of standard descent trajectory | 65291 m
-Landing speed | 70 m/sec
-Entry speed (normal) | 128 m/s
-Entry altitude | 10000 m
-Final Approach starting point coordinates | x=0, y=0
-Final Approach length | 15021 m
-Final Approach starting altitude | 800 m
-Final Approach duration | 58 s
-Descent speed max | 128 m/s
-Descent speed min | 105 m/s
-Minimum distance between aircrafts | 5200 m
-Entry speed range | 120 – 130 m/s
