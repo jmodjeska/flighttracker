@@ -16,7 +16,7 @@
  * Y = 2.48E-14 * distance^4 - 2.5E-9 * distance^3 + 1.09E-4 * distance^2 - 0.4019 * distance + 47000
 1. Flight statuses “descent”, “final_approach”, “landed”, “diverted”
 1. Aircrafts enter the airspace at the speed in the range of 120 – 130 m/s. Their descent speed should be adjusted as needed to ensure that at no time aircrafts are closer than 5200 m to each other. The allowable speed range is 105 – 128 m/s.
-1. Expected output in JSON format:
+1. Expected output in JSON format: 
 
  ```
  {
