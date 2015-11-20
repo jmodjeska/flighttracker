@@ -1,6 +1,6 @@
 ## Design Specification
 
-![](https://raw.githubusercontent.com/jmodjeska/flighttracker/master/docs/trajectory.png)
+![](https://raw.githubusercontent.com/jmodjeska/flighttracker/master/docs/images/trajectory.png)
 
 1. Develop FlightTracker application that registers every aircraft that enters the SeaTac airspace. FlightTracker is a web service. It receives service requests through its URL as HTTP GET calls.
 1. The service requests come in two flavors:
