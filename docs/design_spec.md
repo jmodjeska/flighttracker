@@ -20,3 +20,13 @@ Entry speed range | 120 – 130 m/s
  * X = 2.8E-11 * distance^3 - 6.4E-6 * distance^2+0.048 * distance + 16000
  * Y = 2.48E-14 * distance^4 - 2.5E-9 * distance^3 + 1.09E-4 * distance^2 - 0.4019 * distance + 47000
 * Flight statuses “descent”, “final_approach”, “landed”, “diverted”
+* Expected output in JSON format:
+```
+{
+  "aircrafts":[
+    {"flight":"AA876, "x":4200, “y”: 23004, “altitude”: 8000, “status”: “descent”},
+    {"flight":"DL234, "x":8200, “y”: 1000, “altitude”: 8000, “status”: “final_approach”},
+    {"flight":"AF133, "x":0, “y”: 15000, “altitude”: 8000, “status”: “landed”},
+  ]
+}
+```
