@@ -1,0 +1,7 @@
+server_url: https://APPNAME.herokuapp.com/
+host: HOSTNAME.amazonaws.com
+db: DBNAME
+user: USERNAME
+port: 1234
+password: SUPER_SECURE_PASSWORD
+app: APPNAME
