@@ -14,7 +14,7 @@ class FlightServer < WEBrick::HTTPServlet::AbstractServlet
   end
 end
 
-server = WEBrick::HTTPServer.new( :Port => 8080 )
+server = WEBrick::HTTPServer.new
 server.mount '/', FlightServer
 trap("INT") { server.shutdown }
 server.start
