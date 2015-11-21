@@ -1,2 +1,0 @@
-server_url: https://APPNAME.herokuapp.com/
-database_url: postgres://USER:PASS@HOST.amazonaws.com:PORT/DBNAME

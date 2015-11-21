@@ -1,23 +1,26 @@
-$LOAD_PATH.unshift(File.dirname(__FILE__))
 require 'active_record'
-require 'pg'
+require 'sqlite3'
 require 'yaml'
 
 module Constructor
-  CONFIG = YAML::load_file('../config/config.yml')
-  SCHEMA = YAML::load_file('models/db_schema.yml')
-  DB_URL = ENV['DATABASE_URL'] || CONFIG['database_url']
+  SCHEMA = YAML.load_file('models/db_schema.yml')
+  DB = '../data/flighttracker.db'
+
 
   def db_up
-    access_db
+    access_or_create_db
     create_table_schema
     return ActiveRecord::Base
   end
 
-  def access_db
-    ActiveRecord::Base.logger = Logger.new('../data/flighttracker.log')
+  def access_or_create_db
+    SQLite3::Database.new DB unless File.exist?(DB)
+    ActiveRecord::Base.logger = Logger.new("../data/flighttracker.log")
     ActiveRecord::Base.default_timezone = :local
-    ActiveRecord::Base.establish_connection(DB_URL)
+    ActiveRecord::Base.establish_connection(
+      :adapter  => 'sqlite3',
+      :database => 'flighttracker'
+    )
   end
 
   def create_table_schema
