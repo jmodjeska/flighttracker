@@ -1,12 +1,18 @@
 $LOAD_PATH.unshift(File.dirname(__FILE__))
 require 'rubygems'
 require 'bundler/setup'
+require 'models/constructor'
+require 'models/models'
 
 class Simulator
+include Constructor
+include Models
+
   CONFIG = YAML::load_file("../config/config.yml")
 
   def initialize(run_mode=:realtime)
     @run_mode = run_mode
+    db_up
   end
 
   def flight_code

@@ -1,0 +1,8 @@
+source 'https://rubygems.org'
+gem 'activesupport', '~>4.2.4'
+gem 'activerecord', '~>4.2.4'
+gem 'webrick', '~>1.3.1'
+gem 'minitest', '5.8.2'
+gem 'htmlbeautifier'
+gem 'nokogiri'
+gem 'pg'

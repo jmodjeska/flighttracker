@@ -1,0 +1,5 @@
+flights:
+  :entry_time: datetime
+  :final_approach_time: datetime
+  :landing_time: datetime
+  :flight_code: string
