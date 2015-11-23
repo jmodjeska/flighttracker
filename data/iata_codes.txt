@@ -1,232 +1,3 @@
-0A GNT Amber Air (Lithuania) 
-0D DWT Darwin Airline (Switzerland) 
-0J JCS Jetclub (Switzerland) Jetclub
-0K KRT Kokshetau (Kazakhstan) Kokta
-0W WCR West Caribbean Costa Rica (Costa Rica) West Caribbean
-1I AMB Deutsche Rettungsflugwacht (Germany) Civil Air Ambulance
-1I EJA Netjets Aviation (USA) Execjet
-1I NVR Novair (Sweden) Navigator 
-1I PGT Pegasus Hava Tasimaciligi (Turkey) Sun Turk 
-1I PZR Sky Trek International Airlines (USA) Phazer 
-2A DBB Deutsche Bahn (Germany) 
-2B ARD ATA Aerocondor (Portugal) Aerocondor 
-2C TGV SNCF (France) 
-2D AOG Aero VIP (Argentina) Avip
-2F FTA Frontier Flying Service (USA) Frontier Air 
-2F IRP Payam/IPTAS (Iran) Payam Air 
-2G MRR San Juan Airlines/West Isle Air (USA) Mariner 
-2I SRU Star Up (Peru) Star Up
-2J VBW Air Burkina (Burkina Faso) Burkina
-2K GLG Aerogal Aerolineas Galapagos (Ecuador) Aerogal
-2L OAW Helvetic Airways (Switzerland) Helvetic 
-2M MDV Moldavian Airlines (Moldova) Moldavian
-2N UMK Yuzmashavia (Ukraine) Yuzmash
-2O RNE Air Salone (Sierra Leone) 
-2P GAP Air Philippines (Philippines) Orient Pacific 
-2Q SNC Air Cargo Carriers (USA) Night Cargo
-2R VRR VIA Rail Canada (Canada) 
-2S SDY Island Express (USA) Sandy Isle
-2T HAM Haiti Ambassador Airlines (Haiti) 
-2T TUX Tulpar Air Service (Kazakhstan) Tulpa
-2U GIP Air Guinee Express (Guinea) Future Express 
-2W WLC Welcome Air (Austria) Welcome Air 
-3A AFJ Alliance Airlines/Kenosha Aero (USA) 
-3B BFR Burkina Airlines (Burkina Faso) Burk Lines 
-3B JBR Job Air (Czech Rep.) Job Air 
-3C CEA Corporate Airlines (USA) Corp Ex 
-3D APG Air People International (Thailand) Air People
-3D DNM Denim Air (Netherlands) Denim 
-3E EMU East Asia Airlines (Macau) 
-3G AYZ Atlant­Soyuz Airlines (Russian Federation) Atlant­Soyuz 
-3H AIE Air Inuit (Canada) Air Inuit
-3K JSA Jetstar Asia Airways (Singapore) 
-3L ISK Intersky (Austria) 
-3M GFT Gulfstream International Airlines (USA) Gulf Flight
-3N URG Air Urga (Ukraine) Urga
-3O JUB Jubba Airways (Somalia) Jubba
-3P TCU Inter Tropical Aviation (Suriname) Tropair 
-3P TPV Thai Pacific Airlines Business Company (Thailand) Thai Pacific 
-3R ARB Avia Air (Aruba) Aviair 
-3R GAI Gromov Flight Research Institute Airline (Russian Federation) Gromov Airline
-3T URN Turan Air (Azerbaijan) Turan
-3U NCH Chanchangi Airlines Nigeria (Nigeria) Chanchangi
-3U CSC Sichuan Airlines (China) Chuanhang
-3V TAY TNT Airways (Belgium) Quality 
-3W EMX Euromanx/Woodgate Executive Air Charter UK (UK) Euromanx 
-3W VNR Wanair (French Polynesia) Wanair 
-3X JAC Japan Air Commuter (Japan) Commuter 
-3Y XBO Baseops International (USA) 
-3Z VTS Everts Air/Tatonduk Outfitters (USA) Everts 
-3Z NEC Necon Air (Nepal) Necon Air 
-4A EYE F.S. Air Service (USA) Sockeye
-4B TUP Aviastar­Tu Co. (Russian Federation) Tupolev Air 
-4C ARE Aires (Colombia) Aires 
-4C CGK Click Airways (Kyrgyzstan) Click Air 
-4C CTP Tashkent Aircraft Production Corporation (Uzbekistan) Cortas 
-4D ASD Air Sinai (Egypt) Air Sinai
-4E TNR Tanana Air Service (USA) Tan Air 
-4F ECE Air City (Germany) 
-4G GZP Gazpromavia (Russian Federation) Gazprom 
-4G CSZ Shenzhen Airlines (China) Shenzhen Air 
-4H FLB Fly Linhas Aereas (Brazil) Aereafly 
-4I KNX Knighthawk Air Express (Canada) Knight Flight
-4J NWZ Nationwide Airlines (Zambia) Zamnat
-4K KBA Kenn Borek Air (Canada) Borek Air 
-4L KZR Air Astana (Kazakhstan) Astana Line
-4M DSM Lan Argentina/Aero 2000 (Argentina) Aero Dos Mil
-4N ANT Air North Charter (Canada) Air North
-4O KMO Ocean Airlines (Comoros) 
-4R HHI Hamburg International Airlines (Germany) Hamburg Jet
-4R OEG Orient Eagle Airways (Kazakhstan) Orient Eagle
-4S HON Sol Air Honduras/Aero Honduras (Honduras) Aero Honduras 
-4T BHP Belair Airlines (Switzerland) Belair 
-4U GWI Germanwings (Germany) Germanwings 
-4U TVJ Tavaj Transportes Aereos Regulares (Brazil) Tavaj
-4W WAV Warbelow's Air Ventures (USA) Warbelow
-4X MEC Air Mercury/Mercury Air Cargo (USA) Mercair 
-4Y UYA Yute Air Alaska (USA) Yute Air 
-4Z LNK South African Airlink (South Africa) Link 
-5A EUK Air Atlanta Europe (UK) Snowbird
-5A AIP Alpine Aviation (USA) Alpine Air 
-5B EAK Euro Asia International (Kazakhstan) Eakaz 
-5C ICL CAL Cargo Airlines/Cavei Avir Levitanim (Israel) Cal
-5D SLI Aerolitoral (Mexico) Costera
-5D UDD Dombass Airlines (Ukraine) Donbass 
-5E EKA Equaflight Service (Congo) Equaflight
-5F CIR Arctic Circle Air Service (USA) Air Arctic 
-5G SSV Skyservice Airlines (Canada) Skytour
-5H STQ Star Air (Indonesia) Stera
-5I GRG Trans Air Georgia (Georgia) 
-5J CEB Cebu Pacific Air (Philippines) Cebu Air 
-5K ODS Odessa Airlines (Ukraine) Odessa Air 
-5L ASU Aerosur (Bolivia) Asur 
-5M SIB SIAT Sibaviatrans (Russian Federation) Sibavia
-5N AUL Aeroflot­Nord (Russian Federation) Dvina
-5O FPO Europe Airport (France) French Post
-5P HSK Sky Europe Airlines (Hungary) Matra
-5Q BEA Best Aviation (Bangladesh) Best Air 
-5Q JFK Keenair Charter (UK) Keenair 
-5R CTT Custom Air Transport (USA) Catt
-5R KAJ Karthago Airlines (Tunisia) Karthago
-5S PSV Servicios Aereos Profesionales (Dominican Rep.) Proservicios 
-5T MPE Canadian North/Air NorTerra Inc (Canada) Empress 
-5T TWE Transair Sweden (Sweden) Trans Swede
-5U LDE LADE Lineas Aereas del Estado (Argentina) Lade
-5V UKW Lviv Airlines/Lvov Airlines (Ukraine) Ukraine West
-5W AEU Astraeus (UK) Flystar 
-5W ITM Itapermirim Transportes Aereos (Brazil) 
-5X UPS United Parcel Service (USA) UPS 
-5Y GTI Atlas Air (USA) Giant
-5Y IOS Isles of Scilly Skybus (UK) 
-5Z BML Bismillah Airlines (Bangladesh) Bismillah
-6A CHP Aviacsa (Mexico) Aviacsa
-6B BLX Britannia Airways Sweden (Sweden) Bluescan
-6C CMY Cape Smythe Air Services (USA) Cape Smythe Air 
-6D PAS Pelita Air (Indonesia) Pelita
-6E CIP City Air Germany (Germany) Cityways 
-6F PFO Aerotrans Airlines (Cyprus) Cyprus Aerotrans 
-6F FAO Falcon Air Express (USA) Panther 
-6G AWW Air Wales (UK) Red Dragon
-6H ISR Israir (Israel) Israir 
-6I VVA Aviast (Russian Federation) Ialsi
-6J SNJ Skynet Asia Airways (Japan) Newsky 
-6K RIT Asian Spirit (Philippines) Asian Spirit
-6K INX Inter Express Hava Tasimacilik (Turkey) Inter Euro
-6L AKK Aklak Air (Canada) Aklak 
-6M EUP Euroair (Greece) Eurostar 
-6M MJC Majestic Air (Zimbabwe) Zimbird
-6N NRD Nordic Regional (Sweden) North Rider 
-6N TRQ Trans Travel Airlines (Netherlands) Hunter 
-6O ASJ Air Satellite (Canada) Satellite
-6P ISG Clubair Sixgo (Italy) Ital Cargo
-6Q SLL Slovak Airlines (Slovakia) Slov Line
-6R TNO Aerotransporte de Carga Union (Mexico) Aero Union
-6S KAT Kato Air (Norway) Kato Air 
-6T LMT Almaty Aviation (Kazakhstan) 
-6V VGA Air Vegas (USA) Air Vegas 
-6V AXY Axis Airways (France) Axis 
-6W SOV Saravia Saratov Airlines (Russian Federation) Saratov Air 
-6Y LTC Latcharter (Latvia) Latcharter
-6Z PNV Panavia (Panama) Panavia
-6Z UKS Ukrainian Cargo Airways (Ukraine) Cargo Trans 
-7A AFF Afric'Air Charter (Benin) Benin Charters 
-7A NXA Air Next (Japan) 
-7B KJC Kras Air/Krasnojarsky Airlines (Russian Federation) Krasnojarsky Air 
-7C COY Coyne Airways (UK) Coyne Air 
-7D UDC Utility Enterprise DonbassAero Airline (Ukraine) Aviation Donbass 
-7E AWU Aeroline (Germany) Sylt­Air 
-7F FAB First Air (Canada) First Air 
-7G MKA MK Airlines (Ghana) Kruger­Air 
-7H ERH ERA Aviation (USA) Erah
-7I CSV Coastal Travel Limited (Tanzania) Coastal Travel
-7J TJK Tajik Air (Tajikistan) Tajik Air 
-7K KGL Kolavia/Kogalymavia Airlines (Russian Federation) Kogalym 
-7L CRN Aerocaribbean (Cuba) Aerocaribbean
-7L ERO Sun d'Or International Airlines (Israel) Echo Romeo
-7M AAG Atlantic Air Transport (UK) Atlantic 
-7M TYM Tyumen Airlines (Russian Federation) Air Tyumen
-7P BTV Metro Batavia (Indonesia) Batavia
-7Q VZA Air Venezuela (Venezuela) Air Venezuela
-7Q TLR Tibesti Air Libya (Libyan Arab Jamahiriya) Air Libya
-7S RYA Arctic Transportation Services (USA) Ryan Air 
-7T RTM Aero Express Del Ecuador (Ecuador) Aero Transam 
-7T AGV Air­Glaciers (Switzerland) Air Glaciers 
-7T TQB Tobruk Air Transport and Cargo (Libyan Arab Jamahiriya) Tobruk Air 
-7U ERG Aviaenergo (Russian Federation) Aviaenergo
-7V PDF Pelican Air Services (South Africa) Pelican Airways 
-7Y NYL Mid Airlines (Sudan) Nile
-7Z LBH Laker Airways Bahamas/L.B. Limited (USA) Laker Bahamas 
-8A AKR Arctic Air (Norway) 
-8A BMM Atlas Blue (Morocco) 
-8B GFI Caribbean Star Airlines (Antigua and Barbuda) Carib Star 
-8C ATN Air Transport International ATI (USA) Air Transport
-8D SUW Astair (Russian Federation) Astair 
-8D EXV Expo Aviation (Sri Lanka) Expo Avia
-8E BRG Bering Air (USA) Bering Air 
-8F FFR Fischer Air (Czech Rep.) Fischer 
-8G NGE Angel Airlines (Thailand) Angel Air 
-8G GJT Gestion Aerea Ejecutiva (Spain) Banjet
-8H HFR Heli France (France) Helifrance
-8H HWY Highland Airways (UK) Hiway 
-8J KMV Komiinteravia (Russian Federation) Komiinter 
-8K KOZ Angel Airlines (Romania) 
-8L RHC Redhill Aviation (UK) Redair 
-8M MXL Maxair (Sweden) Maxair 
-8M UBA Myanmar Airways International (Myanmar) 
-8N NKF Nordkalottflyg (Sweden) Nordflight
-8P PCO Pacific Coastal Airlines (Canada) Pasco
-8Q BAJ Baker Aviation (USA) Baker Aviation
-8Q OHY Onur Air (Turkey) Onur Air 
-8R EDW Edelweiss Air (Switzerland) Edelweiss 
-8S SCP Scorpio Aviation (Egypt) Scorpio
-8U AAW Afriqiyah Airways (Libyan Arab Jamahiriya) Afriqiyah
-8V WRT Wright Air Service (USA) Wright Air 
-8Y PBU Air Burundi (Burundi) Air Burundi
-8Y CYZ China Postal Airlines (China) China Postair 
-8Z LER LASER Linea Aerea de Servicio Ejecutivo Regional (Venezuela) Laser 
-9E FLG Pinnacle Airlines/Northwest Airlink (USA) Flagship
-9J PSA Pacific Island Aviation (USA) Pacific Isle
-9K KAP Cape Air (USA) Cair 
-9L CJC Colgan Air (USA) Colgan
-9M GLR Central Mountain Air (Canada) Glacier 
-9N NSE SATENA (Colombia) Satena
-9Q PBA PB Air (Thailand) Pee Bee Air 
-9R VAP Phuket Airlines (Thailand) Phuket Air 
-9S SOO Southern Air (USA) Southern Air 
-9S CQH Spring Airlines (China) 
-9T ABS Athabaska Airlines (Canada) Athabaska
-9U MLD Air Moldova (Moldova) Air Moldova
-9V ROI Avior Express/Aviones del Oriente (Venezuela) Avior 
-9W JAI Jet Airways (India) Jet Airways 
-9X ACL Itali Airlines (Italy) Spada
-A2 CIU Cielos del Peru (Peru) Cielos 
-A3 AEE Aegean Cronus Airlines (Greece) Aegean
-A4 SWD Southern Winds (Argentina) Southern Winds 
-A5 RLA Airlinair (France) Airlinair 
-A6 LPV Air Alps (Austria) Alpav 
-A7 MPD Air Comet (Spain) Red Comet
-A8 BGL Benin Golf Air (Benin) Benin Golf
-A9 TGZ Georgian Airlines/Air Zena (Georgia) Tamazi
 AA AAL American Airlines (USA) American
 AB BER Air Berlin (Germany) Air Berlin
 AC ACA Air Canada (Canada) Air Canada
@@ -254,17 +25,6 @@ AW SCH Schreiner Airways (Netherlands) Schreiner 
 AX LOF Trans States Airlines/American Connection (USA) Waterski
 AY FIN Finnair (Finland) Finnair 
 AZ AZA Alitalia (Italy) Alitalia
-B2 BRU Belavia (Belarus) Belarus Avia
-B3 BLV Bellview Airlines (Nigeria) Bellview Airlines 
-B4 BCF BACH Flugbetriebs (Austria) Bach
-B4 BKA Bankair (USA) Bankair 
-B4 GSM Flyglobespan/Globespan Airways (UK) Globespan
-B5 FLT FlightLine (UK) 
-B6 JBU JetBlue Airways (USA) Jetblue
-B7 UIA UNI Airways Corporation (Taiwan) Glory 
-B8 ERT Eritrean Airlines (Eritrea) Eritrean
-B9 BGD Air Bangladesh (Bangladesh) Air Bangla
-B9 IRB Iran Air Tours (Iran) 
 BA BAW British Airways (UK) Speedbird
 BA SHT British Airways Shuttle (UK) Shuttle
 BC SKY Skymark Airlines (Japan) Skymark 
@@ -293,13 +53,6 @@ BX CST Coast Air (Norway) Coast Center 
 BY TOM Thomsonfly/Britannia Airways (UK) Britannia
 BZ BDA Blue Dart Aviation (India) Blue Dart
 BZ KEE Keystone Air Service (Canada) Keystone
-C2 ALU Air Luxor (Sao Tome and Principe) Luxor Jet
-C3 IPR Icar Airlines/Independent Carrier (Ukraine) Air Icar 
-C4 IMX Zimex Aviation (Switzerland) Zimex 
-C5 UCA Commutair/Continental Connection (USA) Commutair 
-C6 CJA CanJet (Canada) Canjet
-C7 RLE Rico Linhas Aereas (Brazil) Rico
-C9 RUS Cirrus Airways/Team Lufthansa (Germany) Cirrus Air
 CA CCA Air China (China) Air China
 CB SAY Scot Airways/Suckling Airways (UK) Suckling
 CC ABD Air Atlanta Icelandic (Iceland) Atlanta
@@ -324,12 +77,6 @@ CW MRS Air Marshall Islands (Marshall Islands) Marshall Islands 
 CX CPA Cathay Pacific (Hong Kong) Cathay 
 CY CYP Cyprus Airways (Cyprus) Cyprus 
 CZ CSN China Southern Airlines (China) China Southern
-D3 DAO Daallo Airlines (Djibouti/Somalia) Dalo Airlines 
-D4 LID Alidauni (Italy) Alida
-D5 DAE DHL Aero Expreso (Panama) 
-D6 ILN Inter Air (South Africa) Inline
-D8 DJB Djibouti Airlines (Djibouti) Djibouti Air 
-D9 DNV Aeroflot­Don/Donavia (Russian Federation) Donavia
 DB BZH Brit Air (France) Brit Air 
 DC GAO Golden Air (Sweden) Golden
 DE CFG Condor Flugdienst (Germany) Condor 
@@ -356,15 +103,6 @@ DW UCR Aero­Charter Ukraine (Ukraine) 
 DX DTR DAT Danish Air Transport (Denmark) Danish
 DY NAX Norwegian Air Shuttle (Norway) Nor Shuttle
 DZ NOE Transcaraibes Air International (Guadeloupe) French Hopper 
-E2 KMP Kampuchea Airlines (Cambodia) Kampuchea
-E2 GRN Rio Grande Air (USA) Grande
-E3 DMO Domodedovo Airlines (Russian Federation) Domodedovo
-E4 RSO Aero Asia International (Pakistan) Aero Asia
-E5 BRZ Samara Airlines (Russian Federation) Beryoza
-E7 ESF Estafeta Carga Aerea (Mexico) 
-E7 EAF European Aviation Air Charter (UK) Euro Charter 
-E8 ELG Alpi Eagles (Italy) Alpi Eagles 
-E9 CXS Boston­Maine Airways/Pan Am Clipper Connection (USA) Clipper Express 
 EA EAE European Air Express (Germany) Starwing
 EC TWN Avialeasing Aviation Company (Uzbekistan) Twin Arrow
 ED ABQ Airblue (Pakistan) 
@@ -396,15 +134,6 @@ EY EFL Eagle Air (Tanzania) Flying Eagle
 EY ETD Etihad Airways (United Arab Emirates) Etihad
 EZ EIA Evergreen International Airlines (USA) Evergreen
 EZ SUS Sun­Air of Scandinavia (Denmark) Sun Scan
-F2 FLM Fly Havayolu Tasimacilik (Turkey) Fly World
-F3 FSW Faso Airways (Burkina Faso) Faso
-F4 NBK Albarka Air (Nigeria) Al Air 
-F5 COZ Cosmic Air (Nepal) Cosmic Air 
-F6 CAG Air China Zhejiang Company (China) China National
-F6 FCC First Cambodia Airlines (Cambodia) First Cambodia
-F7 BBO Flybaboo (Switzerland) Baboo
-F8 FDM Freedom Airlines (USA) Liberty 
-F9 FFT Frontier Airlines (USA) Frontier Flight
 FA SFR Safair (South Africa) Cargo
 FB LZB Bulgaria Air/Balkan Air Tours (Bulgaria) Flying Bulgaria
 FG AFG Ariana Afghan Airlines (Afghanistan) Ariana
@@ -426,16 +155,6 @@ FV PLK Pulkovo Aviation Enterprise (Russian Federation) Pulkovo
 FW FRI Fair (Japan) Fair 
 FX FDX FedEx Express/Federal Express (USA) Fedex 
 FY NWR Northwest Regional Airlines (Australia) 
-G2 VXG Avirex (Gabon) Avirex Gabon
-G2 DOB Dobrolet Airlines (Russian Federation) Dobrolet
-G3 GLO GOL Transportes Aereos (Brazil) Gol Transporte
-G4 CGH Air Guizhou (China) Guizhou
-G4 AAY Allegiant Air (USA) Allegiant
-G6 BSR Guine Bissau Airlines (Guinea­Bissau) 
-G8 ENK Enkor (Russian Federation) Enkor 
-G8 GUJ Gujarat Airways (India) Gujart Air 
-G9 ABY Air Arabia (United Arab Emirates) Arabia
-G9 CWG Continental Wings (Gambia) Contiwings 
 GA GIA Garuda Indonesia (Indonesia) Indonesia
 GB ABX ABX Air (USA) Abex 
 GC GNR Gambia International Airlines (Gambia) Gambia International
@@ -463,16 +182,6 @@ GW KIL Kuban Airlines (Russian Federation) Air Kuban
 GX PFR Pacificair/Pacific Airways Corporation (Philippines) Pacific West
 GY GYA Guyana Airlines 2000 (Guyana) Guyair 
 GY TMG Tri­MG Intra Asia Airlines (Indonesia) Trilines 
-H1 ­­­ Hooters Air, operated by Pace Airlines (USA) Pace
-H2 SKU Sky Service (Chile) Aerosky 
-H4 HLI Heli Securite Helicopter Airlines (France) Heli Saint Tropez 
-H4 IIN Inter Islands Airlines (Cape Verde) 
-H5 MVL MAVIAL Magadan Airlines (Russian Federation) Mavial
-H6 HAG Hageland Aviation Services (USA) Hageland
-H7 EGU Eagle Air (Uganda) African Eagle
-H8 KHB Dalavia Far East Airways (Russian Federation) Khabarovsk Air 
-H9 HAD Air D'Ayiti/Haiti Aviation (Haiti) Haiti Avia
-H9 SUL TAM Express (Brazil) Tam Express 
 HA HAL Hawaiian Airlines (USA) Hawaiian
 HB HAR Harbor Airlines (USA) Harbor 
 HC ATI Aero Tropics Air Services (Australia) 
@@ -499,8 +208,6 @@ HW FHE Hello (Switzerland) 
 HW NWL North­Wright Airways (Canada) Northwright
 HY UZB Uzbekistan Airways (Uzbekistan) Uzbek 
 HZ SHU SAT Sakhalin Airlines (Russian Federation) Satair 
-I6 SEQ Sky Eyes (Thailand) Sky Eyes 
-I9 IBU Indigo (USA) Indigo Blue
 IA IAW Iraqi Airways (Iraq) Iraqi
 IB IBE Iberia (Spain) Iberia
 IC IAC Indian Airlines (India) Indair 
@@ -524,14 +231,6 @@ IT IRT Irtysh­Avia (Kazakhstan) Irtysh
 IV JET Wind Jet (Italy) Ghibli
 IY IYE Yemenia (Yemen) Yemeni
 IZ AIZ Arkia (Israel) Arkia
-J2 AHY AZAL Azerbaijan Airlines/AHY (Azerbaijan) Azal
-J3 PLR Northwestern Air Lease (Canada) Polaris 
-J4 JMX Air Jamaica Express (Jamaica) Jamaica Express 
-J4 BFL Buffalo Airways (Canada) Buffalo Airways 
-J6 AOC Avcom Aviation (Russian Federation) Aero Avcom 
-J7 CVC Centre­Avia Airlines (Russian Federation) 
-J8 BVT Berjaya Air (Malaysia) Berjaya
-J9 GIF Guinee Airlines (Guinea) Guinee Airlines 
 JB JBA Helijet Airways (Canada) Helijet
 JC JEX JAL Express (Japan) Janex 
 JF LAB LAB Flying Service (USA) Lab
@@ -553,13 +252,6 @@ JV BLS Bearskin Airlines (Canada) Bearskin
 JW APW Arrow Air (USA) Big A 
 JY IWY Air Turks and Caicos (Turks and Caicos Islands) Islandways 
 JZ SKX Skyways (Sweden) Sky Express
-K2 ELO Eurolot (Poland) Eurolot
-K4 CKS Kalitta Air (USA) Connie
-K5 WAK Wings of Alaska (USA) Wings Alaska
-K7 TMP Arizona Express Airlines (USA) Tempe
-K7 IKT Sakha Airlines (Russian Federation) Sakha Avia
-K9 KRI Krylo Aviakompania (Russian Federation) Krilo
-K9 SGK Skyward Aviation (Canada) Skyward
 KA HDA Dragonair/Hong Kong Dragon Airlines (Hong Kong) Dragon
 KB DRK Druk Air (Bhutan) Royal Bhutan
 KD KNI Kaliningradavia (Russian Federation) Kaliningrad Air 
@@ -582,17 +274,6 @@ KW KSD Kas Air (Kazakhstan) Aerokas 
 KX CAY Cayman Airways (Cayman Islands) Cayman
 KY EQL Air Sao Tome e Principe (Sao Tome and Principe) Equatorial
 KZ NCA Nippon Cargo Airlines (Japan) Nippon Cargo
-L2 LYC Lynden Air Cargo (USA) Lynden
-L3 JOS DHL de Guatemala (Guatemala) 
-L3 LTO LTU Billa (Austria) Billatransport
-L4 LDI Lauda Air Italy (Italy) Lauda Italy 
-L5 HKS CHC Helikopter Service (Norway) Helibus 
-L5 LTR Lufttransport (Norway) Lufttransport
-L6 VNZ Tbilaviamsheni (Georgia) Tbilavia
-L7 LPN Laoag International Airlines (Philippines) Laoag Air 
-L7 LNP Linea Aerea SAPSA (Chile) Sapsa
-L8 LXG Air Luxor (Guinea­Bissau) Luxor Gulf
-L9 TLW Teamline Air Luftfahrt (Austria) Teamline
 LA LAN LAN Airlines (Chile) Lan
 LB LLB LAB Airlines/Lloyd Aereo Boliviano (Bolivia) Lloyd Aereo
 LC VLO Varig Log (Brazil) 
@@ -618,17 +299,6 @@ LV LBC Albanian Airlines (Albania) Albanian
 LW ANV Pacific Wings (USA) Tsunami
 LX SWR Swiss International Air Lines (Switzerland) Swiss 
 LY ELY El Al (Israel) El Al
-M2 MZS Mahfooz Aviation (Gambia) Mahfooz 
-M3 TUS ABSA Aerolinhas Brasileiras (Brazil) Turismo
-M3 SPJ Air Service (Macedonia ­ F.Y.R.) Air Skopje
-M3 NFA North Flying (Denmark) North Flying
-M4 AXX Avioimpex (Macedonia ­ F.Y.R.) Impex 
-M6 AJT Amerijet International (USA) Amerijet
-M7 SUK Superior Aviation Services (Kenya) Skycargo
-M7 MAA MAS Carga (Mexico) Mas Carga
-M7 TBG Tropical Airlines D'Haiti (Haiti) 
-M8 MKN Mekong Airlines (Cambodia) Mekong Airlines 
-M9 MSI Motor Sich Aviakompania (Ukraine) Motor Sich
 MA MAH Malev (Hungary) Malev 
 MB EXA Execaire (Canada) Canadian Execaire
 MB MNB MNG Cargo Airlines (Turkey) Black Sea
@@ -659,16 +329,6 @@ MW MYD Maya Island Air (Belize) Myland
 MX MXA Mexicana Airlines (Mexico) Mexicana
 MY MWA Midwest Airlines (Egypt) 
 MZ MNA Merpati Nusantara Airlines (Indonesia) Merpati
-N2 LNT Aerolineas Internacionales SA de CV (Mexico) Linea Int
-N2 QNK Kabo Airlines (Nigeria) Kabo
-N3 OMS Omskavia Airline (Russian Federation) Omsk 
-N4 MTC Minerva Airlines (Italy) Air Minerva
-N5 KYL Kyrgyz International Airlines (Kyrgyzstan) Kyrmal
-N5 SGY Skagway Air Service (USA) Skagway Air 
-N7 JEV Lagun Air (Spain) 
-N8 CRK CR Airways (Hong Kong) Bauhina
-N8 SEK Salaam Express Air Services (Kenya) 
-N9 AOH North Coast Aviation (Papua New Guinea) 
 NA NAO North American Airlines (USA) North American
 NB SNB Sterling European Airlines (Denmark) Sterling
 NC NJS National Jet Systems (Australia) National Jet
@@ -694,9 +354,6 @@ NW NWA Northwest Airlines (USA) Northwest
 NX AMU Air Macau (Macao) Air Macau
 NY FNA Air Iceland/Flugfelag Islands (Iceland) 
 NZ ANZ Air New Zealand (New Zealand) New Zealand
-O2 GIO Oceanic Airlines (Guinea) 
-O3 BVU Bellview Airlines (Sierra Leone) 
-OA OAL Olympic Airlines (Greece) Olympic 
 OB ASZ Astrakhan Airlines (Russian Federation) Air Astrakhan
 OC OAV Omni Aviacao e Tecnologia/PGA Express (Portugal) Omni
 OE AOT Asia Overnight Express Corporation (Philippines) Asia Overnight
@@ -721,13 +378,6 @@ OX OEA Orient Thai Airlines (Thailand) Orient Thai
 OY OAE Omni Air Express (USA) Omni Express 
 OY SDE Soder Air (Finland) Soder 
 OZ AAR Asiana Airlines (Korea ­ Rep. of) Asiana
-P2 PIT Panair (Italy) Panairfly 
-P2 TMN Utair/Tyumenaviatrans (Russian Federation) Tjumavi
-P5 RPB Aerorepublica (Colombia) Aerorepublica
-P6 MUI Trans Air (USA) Maui
-P8 PTN Pantanal Linhas Aereas Sul­Matogrossenses (Brazil) Pantanal
-P9 NCM Nas Air (Mali) Air Bane
-P9 PGP Perm State Air Enterprise (Russian Federation) Perm Air 
 PA FCL Florida Coastal Airlines (USA) Florida Coastal
 PC FAJ Air Fiji/PacificLink (Fiji) Fijiair 
 PC PVV Continental Airways (Russian Federation) Contair 
@@ -757,13 +407,6 @@ PW PRF Precision Air Services (Tanzania) Precision Air 
 PX ANG Air Niugini (Papua New Guinea) Niugini
 PY SLM Surinam Airways (Suriname) Surinam 
 PZ LAP TAM Paraguay/Transportes Aereos del Mercosur (Paraguay) Paraguaya
-Q3 MBN Zambian Airways (Zambia) Mines 
-Q4 SWX Swazi Express Airways (Swaziland) Swazi Express 
-Q5 MLA 40­Mile Air (USA) Mile Air 
-Q6 CDP Aero Condor (Peru) Condor Peru
-Q8 PEC Pacific East Asia Cargo Airlines (Philippines) 
-Q8 TSG Trans Air Congo (Congo) Trans Congo
-Q9 AFU Afrinat International Airlines (Ghana) Afrinat
 QA CBE Aerocaribe (Mexico) Aero Caribe
 QC CRD Air Corridor (Mozambique) Air Corridor 
 QD QCL Air Class Lineas Aereas/AeroVIP (Uruguay) Aola
@@ -787,13 +430,6 @@ QW BWG Blue Wings (Germany) Blue Wings 
 QW TCI Turks and Caicos Airways (Turks and Caicos Islands) Turk National
 QX QXE Horizon Air (USA) Horizon Air 
 QY BCS European Air Transport (Belgium) Eurotrans 
-R2 ORB Orenburg Airlines (Russian Federation) Orenburg
-R4 SDM Russia State Transport Company (Russian Federation) Russia
-R5 MAC Malta Air Charter (Malta) Malta Charter 
-R6 SBK Air Sprska (Bosnia­Herzegovina) Air Sprska
-R7 OCA Aserca Airlines (Venezuela) Arosca
-R8 KGA Kyrghyzstan Airlines (Kyrgyzstan) Kyrgyz 
-R9 CAM Camai Air/Village Aviation (USA) Air Camai
 RA RNA Royal Nepal Airlines (Nepal) Royal Nepal
 RB SYR Syrian Arab Airlines (Syrian Arab Rep.) Syrian Air 
 RC FLI Atlantic Airways (Faroe Islands) Faroeline
@@ -822,14 +458,6 @@ RW RPA Republic Airlines (USA) Brickyard
 RX AEH Aviaexpress (Hungary) Avex 
 RY EXC Euro Exec Express (Sweden) Echo Express 
 RZ LRS SANSA Servicios Aereos Nacionales SA (Costa Rica) 
-S2 SHD Sahara Airlines (India) 
-S3 BBR Santa Barbara Airlines (Venezuela) 
-S4 RZO Sata International (Portugal) Air Azores 
-S5 TCF Shuttle America/US Airways Express (USA) Shuttlecraft
-S7 SBI Sibir/Siberia Airlines (Russian Federation) 
-S8 CAH Chari Aviation Services (South Africa) 
-S8 SWW Shovkoviy Shlyah Airlines (Ukraine) 
-S9 HSA East African Safari Air (Kenya) 
 SA SAA South African Airways (South Africa) Springbok 
 SB ACI Aircalin/Air Caledonie International (France) Aircalin
 SC CDG Shandong Airlines (China) Shandong
@@ -854,16 +482,6 @@ SW NMB Air Namibia (Namibia) Namibia
 SX AJO Aeroejecutivo (Mexico) Aero Exo
 SY SCX Sun Country Airlines (USA) Sun Country 
 SZ CXN Air China Southwest Company (China) China Southwest
-T2 TCG Thai Air Cargo (Thailand) Thai Cargo
-T3 EZE Eastern Airways (UK) East Flight
-T4 TRL Transeast Airlines (Latvia) Lat Trans 
-T4 HEJ Hellas Jet (Greece) Hellas Jet
-T5 TUA Turkmenistan Airlines (Turkmenistan) Turkmenistan
-T6 TVR Tavrey/Tavria Aviakompania (Ukraine) Travey 
-T7 SRT Trans Asian Airlines (Kazakhstan) Traser 
-T7 TJT Twin Jet (France) Twin Jet
-T8 NQN Transportes Aereos Neuquen (Argentina) Taneu
-T9 TRZ Prime Air/Transmeridian Airlines (USA) Trans Meridian
 TA TAI Taca International Airlines (El Salvador) Taca
 TA TPU Taca Peru (Peru) Trans Peru
 TC ATC Air Tanzania (Tanzania) Tanzania
@@ -894,15 +512,6 @@ TX FWI Air Caraibes (France) French West
 TY TPC Air Caledonie (France) Air Cal
 TY IWD Iberworld (Spain) 
 TZ AMT ATA/American Trans Air (USA) Amtran
-U2 EZY easyJet (UK) Easy 
-U3 AIA Avies (Estonia) Avies 
-U4 PMT Progress Multitrade (Cambodia) Multitrade
-U5 IBZ International Business Air (Sweden) Interbiz 
-U5 GWY USA 3000 Airlines/Brendan Airways (USA) Getaway 
-U6 SVR Ural Airlines (Russian Federation) Sverdlovsk Air 
-U7 NKA Northern Dene Airways (Canada) Norcanair 
-U8 RNV Armavia (Armenia) Armavia
-U9 KAZ Tatarstan Joint Stock Aircompany (Russian Federation) Air Tatarstan
 UA UAL United Airlines (USA) United
 UB UBA Myanmar Airlines (Myanmar) Unionair 
 UC LCO Lan Express/Ladeco (Chile) Ladeco
@@ -931,16 +540,6 @@ UX AEA Air Europa (Spain) Europa
 UY UYC Cameroon Airlines (Cameroon) Cam Air 
 UZ BRQ Buraq Air Transport (Libyan Arab Jamahiriya) Buraq Air 
 UZ TIS Tesis (Russian Federation) Tesis 
-V2 AKT Karat (Russian Federation) Aviakarat
-V3 KRP Carpatair (Romania) Carpatair 
-V4 REK Reem Air (Russian Federation) 
-V5 RYL Royal Aruban Airlines (Aruba) Royal Aruban
-V6 VOG Voyager Airline (Bangladesh) Voyager Air 
-V7 SNG Air Senegal International (Senegal) 
-V8 VAS ATRAN Aviatrans Cargo Airlines (Russian Federation) Atran
-V8 IAR Iliamna Air Taxi (USA) Iliamna Air 
-V8 TPS TAPSA Transportes Aereos Petroleros SA (Argentina) Tapsa
-V9 BTC BAL Bashkirian Airlines (Russian Federation) Bashkirian
 VA VLE Volare Airlines (Italy) Revola
 VC VAL Voyageur Airways (Voyageur) 
 VD BBB Swedjet Airways (Sweden) Blackbird
@@ -965,16 +564,6 @@ VW TAO Transportes Aeromar (Mexico) Trans Aeromar 
 VY VLG Vueling Airlines (Spain) 
 VZ MYT MyTravel Airways (UK) Kestrel
 VZ LIZ MyTravel Lite (UK) My Lite
-W2 EPA Efata Papua Airlines (Indonesia) 
-W2 WEA White Eagle Aviation (Poland) White Eagle
-W3 DNU Danu Oro Transportas (Lithuania) Danu
-W4 BES Aero Services Executive (France) Bird Express 
-W5 IRM Mahan Air (Iran) Mahan Air 
-W6 WIL West Isle Air (USA) West Isle Air 
-W6 WZZ Wizz Air (Hungary) Wizz Air 
-W7 SAH Sayakhat (Kazakhstan) Sayakhat
-W8 CJT CargoJet Airways (Canada) Cargojet
-W8 KFA Winnport Air Cargo/Kelowna Flightcraft (Canada) Flightcraft
 WA KLC KLM CityHopper (Netherlands) City 
 WB RWD Rwandair Express (Rwanda) Rwandair 
 WB SAN Servicios Aereos Nacionales (Ecuador) Aereos 
@@ -1001,9 +590,6 @@ WY OMA Oman Air (Oman) Oman Air 
 WY OAS Oman Aviation Services (Oman) Oryx 
 WZ RMM Acvila Air Romanian Carrier (Romania) Air Romania
 WZ WSF West African Airlines (Benin) 
-X3 HLX Hapag­Lloyd Express (Germany) Excellence
-X5 FBN Afrique Airlines (Benin) Afrique Benin
-X9 ISL City Star Airlines (Iceland) 
 XA XAA ARINC/Aeronautical Radio Inc. (USA) 
 XB IAT IATA/Int'l Air Transport Association (Canada) 
 XC KDC KD Air (Canada) Key Dee
@@ -1025,13 +611,6 @@ XS SIT SITA (Belgium) 
 XU AXK African Express Airways (Kenya) Express Jet
 XV IVW Ivoire Airways (Cote d'Ivoire) Ivoire Airways 
 YW ORX Orbit Express Airlines (Turkey) Orex 
-Y4 EQA Eagle Aviation (Kenya) Magnum 
-Y6 KHM Cambodia Airlines (Cambodia) Cambodia Airlines 
-Y7 FJE Flyjet (UK) Envoy 
-Y7 TNB Trans Air Benin (Benin) 
-Y8 SYL Sayany Airlines (Russian Federation) Sayany 
-Y8 YZR Yangtze River Express Airlines (China) Yangtze River 
-Y9 IRK Kish Air (Iran) Kishair 
 YB EXY South African Express (South Africa) Expressways 
 YD GOM Gomelavia (Belarus) Gomel
 YF CFC Canadian Armed Forces (Canada) Canforce
@@ -1051,13 +630,6 @@ YT TGA Air Togo (Togo) Air Togo
 YV ASH Mesa Airlines (USA) Air Shuttle
 YW ANS Air Nostrum (Spain) Nostrum Air 
 YX MEP Midwest Airlines (USA) Midex 
-Z2 STY Styrian Airways (Austria) Styrian
-Z4 BZW Zircon Airways (Benin) Zircon
-Z4 OOM Zoom Airlines (Canada) Zoom 
-Z6 UDN Dnieproavia (Ukraine) Dniepro
-Z7 ADK Aviation Development Company (Nigeria) Adco
-Z8 MTZ Mali Airways (Mali) Mali Airways
-Z9 RZL Aero Zambia (Zambia) Aero Zambia
 ZB MON Monarch Airlines (UK) Monarch
 ZC RSN Royal Swazi National Airways (Swaziland) Swazi National
 ZE AZE Cosmos Air (Germany) Arcus Air 

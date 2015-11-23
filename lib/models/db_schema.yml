@@ -3,3 +3,5 @@ flights:
   :final_approach_time: datetime
   :landing_time: datetime
   :flight_code: string
+  :action: string
+  :descent_speed: integer

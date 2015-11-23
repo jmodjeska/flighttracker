@@ -1,18 +1,17 @@
 $LOAD_PATH.unshift(File.dirname(__FILE__))
 require 'rubygems'
 require 'bundler/setup'
-require 'models/constructor'
-require 'models/models'
+require 'net/http'
+require 'yaml'
 
 class Simulator
-include Constructor
-include Models
 
-  CONFIG = YAML::load_file("../config/config.yml")
+  CONFIG = YAML::load_file('../config/config.yml')
+  CONS = YAML::load_file('../config/constants.yml')
 
-  def initialize(run_mode=:realtime)
-    @run_mode = run_mode
-    db_up
+  def initialize(run_mode = nil)
+    @server = "http://#{CONFIG['server_url']}:#{CONFIG['server_port']}"
+    send_in_the_planes if run_mode == :realtime
   end
 
   def flight_code
@@ -22,10 +21,38 @@ include Models
   end
 
   def altitude
-    rand(10000..12000)
+    rand( CONS['altitude_min']..CONS['altitude_max'] )
   end
 
   def generate_query_string
-    "#{CONFIG['server_url']}/entry?flight=#{flight_code}&altitude=#{altitude}"
+    "#{@server}/entry?flight=#{flight_code}&altitude=#{altitude}"
   end
+
+  def send_plane
+    request = URI(generate_query_string)
+    puts "Sending #{request} ..."
+    response = Net::HTTP.get(request)
+    puts "-=> Received #{response}\n\n"
+  end
+
+  def send_in_the_planes
+    puts "Running simulator. Control+C to break."
+    loop do
+      send_plane
+      delay = rand(30..50)
+      delay.times do |sec|
+        print " Waiting #{delay - sec} seconds ...\r"
+        $stdout.flush
+        sleep 1
+      end
+    end
+  end
+end
+
+run_mode = ARGV[0] || '0'
+
+if run_mode == 'realtime'
+  sim = Simulator.new(:realtime)
+else
+  sim = Simulator.new
 end

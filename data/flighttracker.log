@@ -1,2 +1,0 @@
-# Logfile created on 2015-11-21 00:20:47 -0800 by logger.rb/44203
-D, [2015-11-21T00:20:47.968820 #7421] DEBUG -- :   [1m[36m (1.7ms)[0m  [1mCREATE TABLE "flights" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "entry_time" datetime, "final_approach_time" datetime, "landing_time" datetime, "flight_code" varchar) [0m

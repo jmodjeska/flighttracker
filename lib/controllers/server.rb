@@ -7,6 +7,8 @@ require 'nokogiri'
 
 class FlightServer < WEBrick::HTTPServlet::AbstractServlet
 
+  CONFIG = YAML::load_file("../config/config.yml")
+
   def do_GET(request, response)
     response.status = 200
     response['Content-Type'] = 'text/html'
@@ -14,7 +16,7 @@ class FlightServer < WEBrick::HTTPServlet::AbstractServlet
   end
 end
 
-server = WEBrick::HTTPServer.new( :Port => 8080 )
+server = WEBrick::HTTPServer.new( :Port => CONFIG['server_port'] )
 server.mount '/', FlightServer
 trap("INT") { server.shutdown }
 server.start
