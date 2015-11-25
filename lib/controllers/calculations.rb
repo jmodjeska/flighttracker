@@ -18,7 +18,7 @@ module Calculations
   end
 
   def descent_slope
-    @ingress_altitude – CONS['fa_altitude'] / CONS['descent_distance']
+    ( @ingress_altitude - CONS['fa_altitude'] ) / CONS['descent_distance']
   end
 
   def descent_duration
