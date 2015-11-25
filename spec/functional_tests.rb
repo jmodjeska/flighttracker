@@ -36,4 +36,20 @@ class SimulatorTest < Minitest::Test
     hash = JSON.parse(response)
     assert_equal true, hash.first[0] == "aircrafts"
   end
+
+  def test_atc_accepts_first_plans
+    # Expect:
+    # {
+    #  "decision": "accepted",
+    #  "speed": "128"
+    # }
+  end
+
+  def test_atc_diverts_too_close_plane
+    # Expect:
+    # {
+    #  "decision": "rejected",
+    #  "speed": "nil"
+    # }
+  end
 end

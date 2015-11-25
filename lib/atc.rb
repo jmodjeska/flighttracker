@@ -29,11 +29,6 @@ include Constructor
     end
   end
 
-  def check_current_proximity
-    distance_traveled( speed_last_plane,
-      time_last_plane_at_ingress, @ingress_time )
-  end
-
   def assign_descent_speed
     if time_last_plane_at_fa < Time.now
       return CONS['descent_max']
