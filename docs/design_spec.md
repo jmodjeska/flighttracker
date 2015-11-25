@@ -12,8 +12,8 @@
    <img src="https://raw.githubusercontent.com/jmodjeska/flighttracker/master/docs/images/trajectory.png" width=500px>
 1. When receiving data on a new flight entering the airspace, FlightTracker has to check whether at the given speed this aircraft will always be at least 30 seconds behind the previous flight. If this condition cannot be met, this aircraft shall be diverted and removed from the arriving traffic.
 1. Trajectory equations describe X, Y as functions of the distance flown from the point of entry:
- * X = `2.8E-11 * distance^3 - 6.4E-6 * distance^2+0.048 * distance + 16000`
- * Y = `2.48E-14 * distance^4 - 2.5E-9 * distance^3 + 1.09E-4 * distance^2 - 0.4019 * distance + 47000`
+ * X = `( 2.1e-12 * distance**3 ) - ( 4.41e-6 * distance**2 ) + ( 0.047 * distance ) + 16000`
+ * Y = `( 2.23e-14 * distance**4 ) - ( 2e-9 * distance**3 ) + ( 1.02e-4 * distance**2 ) - ( 5 * distance ) + 47000`
 1. Flight statuses “descent”, “final_approach”, “landed”, “diverted”
 1. Aircrafts enter the airspace at the speed in the range of 120 – 130 m/s. Their descent speed should be adjusted as needed to ensure that at no time aircrafts are closer than 5200 m to each other. The allowable speed range is 105 – 128 m/s.
 1. Expected output in JSON format: 
