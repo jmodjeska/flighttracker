@@ -3,6 +3,8 @@ require 'rubygems'
 require 'bundler/setup'
 require 'net/http'
 require 'yaml'
+require 'controllers/atc'
+require 'controllers/tracker'
 
 class Simulator
 
@@ -39,7 +41,7 @@ class Simulator
     puts "Running simulator. Control+C to break."
     loop do
       send_plane
-      delay = rand(30..50)
+      delay = rand(20..50)
       delay.times do |sec|
         print " Waiting #{delay - sec} seconds ...\r"
         $stdout.flush
@@ -49,9 +51,11 @@ class Simulator
   end
 end
 
-run_mode = ARGV[0] || '0'
+run_mode = ARGV[0]
 
-if run_mode == 'realtime'
+if run_mode.nil?
+  puts "Command line usage: ruby #{$0} realtime"
+elsif run_mode == 'realtime'
   sim = Simulator.new(:realtime)
 else
   sim = Simulator.new

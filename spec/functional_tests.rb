@@ -12,7 +12,7 @@ class SimulatorTest < Minitest::Test
   def setup
     @server = CONFIG['server_url']
     @port = CONFIG['server_port']
-    @sim = Simulator.new
+    @sim = Simulator.new(:test)
   end
 
   def test_simulator_generates_query_string

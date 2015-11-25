@@ -4,30 +4,44 @@ require 'webrick'
 require 'yaml'
 require 'htmlbeautifier'
 require 'nokogiri'
-require 'controllers/response_builder'
+require 'controllers/atc'
+require 'controllers/tracker'
+require 'views/html'
 
 class FlightServer < WEBrick::HTTPServlet::AbstractServlet
-include Builder
+include HTMLTemplates
 
   def do_GET(request, response)
     status, content_type, body = route(request)
     response.status = status
     response['Content-Type'] = content_type
+    if content_type == 'text/html'
+      body_content = html_header + body + html_footer
+      body = HtmlBeautifier.beautify(Nokogiri::HTML(body_content).to_html)
+    end
     response.body = body
   end
 
   def route(request)
     if request.path == '/entry'
-      page_content = entry_response_json
+      page_content = '{ "decision": "ERROR. Missing flight code." }'
+      if request.query["flight"]
+        atc = Controller.new(request.query["flight"], request.query["altitude"])
+        page_content = atc.decision.to_json
+      end
       return [200, 'application/json', page_content]
     elsif request.path == '/tracking_info'
-      page_content = tracker_json
+      timeframe = request.query["timeframe"] || 720
+      tracker = Tracker.new(timeframe.to_i)
+      page_content = tracker.active_positions
       return [200, 'application/json', page_content]
     elsif request.path == '/'
-      page_content = fancy_webpage
+      timeframe = request.query["timeframe"] || 720
+      tracker = Tracker.new(timeframe.to_i)
+      page_content = fancy_webpage(tracker.active_positions)
       return [200, 'text/html', page_content]
     else
-      page_content = not_found_html
+      page_content = not_found
       return [404, 'text/html', page_content]
     end
   end

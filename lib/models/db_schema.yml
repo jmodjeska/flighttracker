@@ -1,5 +1,6 @@
 flights:
-  :entry_time: datetime
+  :ingress_time: datetime
+  :ingress_altitude: integer
   :final_approach_time: datetime
   :landing_time: datetime
   :flight_code: string

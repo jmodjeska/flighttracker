@@ -1,6 +1,7 @@
 fa_distance: 15021
 fa_altitude: 800
 descent_distance: 65291
+descent_h_distance: 64640
 min_distance: 5200
 landing_speed: 70
 descent_max: 128
