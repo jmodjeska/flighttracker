@@ -25,7 +25,7 @@ ruby simulator.rb realtime
 * The server reports tracking info upon request at http://localhost:8080/tracking_info. Include the optional `?timeframe` param to specify how many seconds of history you want to see.
 
 #### Web interface
-Browse to http://localhost:8080/ to view the web interface. 
+Browse to [http://localhost:8080/](http://localhost:8080/) to view the web interface. 
 
 ## Project Description
 Build a web service that provides tracking service to subscribers. 
