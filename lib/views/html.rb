@@ -42,8 +42,9 @@ module HTMLTemplates
       html += "<link rel=\"stylesheet\" type=\"text/css\" href=\"#{css}\">\n"
     end
 
-    # Local style
+    # Local style, favicon
     html += "<style type=\"text/css\">#{local_stylesheet.read}</style>"
+    html += '<link rel="shortcut icon" href="http://j.modjeska.us/favicon.ico">'
 
     # Body
     html += '<div class="site-wrapper"><div class="site-wrapper-inner">' +
