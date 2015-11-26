@@ -118,8 +118,8 @@ module HTMLTemplates
               sizeAdjust: 25,
               formatString: 'x: %d, y: %d<br>' +
                 '<span style="display:none;">%s</span>' +
-                '<b>%s</b><br>%s<br>' +
-                'Altitude: %d m',
+                '<b style="font-size: 20px; color: #4cae4c">%s</b><br>%s<br>' +
+                '<b>Altitude: %d m</b>',
               tooltipLocation: 'n',
               useAxesFormatters: false
             },
