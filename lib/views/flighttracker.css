@@ -13,6 +13,18 @@ body, html {
   font-size: 14px;
 }
 
+div.jqplot-bubble-label {
+  font-size: 14px !important;
+  color: #fff !important;
+}
+
+.jqplot-highlighter-tooltip {
+  background-color: #fff;
+  font-size: 14px;
+  padding: 4px;
+  text-shadow: none;
+}
+
 .masthead-brand {
   float: none;
 }

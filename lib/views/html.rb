@@ -1,4 +1,5 @@
 $LOAD_PATH.unshift(File.dirname(__FILE__))
+require 'net/http'
 
 module HTMLTemplates
 
@@ -13,6 +14,7 @@ module HTMLTemplates
       'http://code.jquery.com/jquery-latest.min.js',
       jqplotcdn + 'jquery.jqplot.min.js',
       jqplotcdn + 'plugins/jqplot.bubbleRenderer.min.js',
+      jqplotcdn + 'plugins/jqplot.highlighter.min.js',
       bootstrapcdn + 'js/bootstrap.min.js'
     ]
 
@@ -69,11 +71,15 @@ module HTMLTemplates
   def fancy_webpage(tracker_json)
     tracker_array = JSON.parse(tracker_json)["aircrafts"].map do |flight|
       next if flight["x"].nil? || flight["x"] == 0
-      [flight["x"], flight["y"], 20, flight["flight"]]
+      [ flight["x"], flight["y"], 30, flight["flight"],
+        get_airline_logo(flight["flight"]), flight["altitude"] ]
     end.compact
+    tracker_array << [0, 0, 15, "FA", 800]
+    tracker_array << [0, 20000, 15, "Land", 0]
+
     html = ''
 
-    if tracker_array.empty?
+    if tracker_array.empty? || tracker_array.length == 2
       return '<h2 class="cover-heading">No planes in flight in the timeframe ' +
         'provided.</h2><p class="help">Try a longer timeframe with the ' +
         '<a href="?timeframe=10000">timeframe</a> param, or send in some ' +
@@ -102,6 +108,22 @@ module HTMLTemplates
               shadow: true,
               shadowAlpha: 0.05
             },
+            highlighter: {
+              tooltipContentEditor: function (str, seriesIndex, pointIndex) {
+                return str + "<br><br>";
+              },
+              show: true,
+              showTooltip: true,
+              tooltipFade: true,
+              sizeAdjust: 25,
+              formatString: 'x: %d, y: %d<br>' +
+                '<span style="display:none;">%s</span>' +
+                '<b>%s</b><br>' +
+                '<img src = "%s" height="50px"><br>' +
+                'Altitude: %d m',
+              tooltipLocation: 'n',
+              useAxesFormatters: false
+            },
             axes:{
               xaxis: {
                 min: -4000,
@@ -117,5 +139,9 @@ module HTMLTemplates
       </script>
     )
     return html + javascript
+  end
+
+  def get_airline_logo(flight_code)
+    return "http://airlinecodes.info/500px/#{flight_code[0..1]}.png"
   end
 end
