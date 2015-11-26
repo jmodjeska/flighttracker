@@ -1,5 +1,5 @@
 # <img src="https://github.com/jmodjeska/flighttracker/blob/master/docs/images/plane.png" width=50px> FlightTracker
-Air traffic control simulator project for my Ruby class.
+Air traffic control simulator project for my Ruby class. Calculates X, Y coordinates and altitude for incoming flights; regulates descent speed and diversions; and tracks planes in flight with a web interface.
 
 <img src="https://raw.githubusercontent.com/jmodjeska/flighttracker/master/docs/images/tracker_screenshot.png" width=600px>
 
