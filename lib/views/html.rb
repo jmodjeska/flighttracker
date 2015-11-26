@@ -72,10 +72,10 @@ module HTMLTemplates
     tracker_array = JSON.parse(tracker_json)["aircrafts"].map do |flight|
       next if flight["x"].nil? || flight["x"] == 0
       [ flight["x"], flight["y"], 30, flight["flight"],
-        get_airline_logo(flight["flight"]), flight["altitude"] ]
+        get_airline(flight["flight"]), flight["altitude"] ]
     end.compact
-    tracker_array << [0, 0, 15, "FA", 800]
-    tracker_array << [0, 20000, 15, "Land", 0]
+    tracker_array << [0, 0, 10, '', 'Final Approach Start Point', 800]
+    tracker_array << [0, 20000, 10, '', 'Touchdown Point', 0]
 
     html = ''
 
@@ -118,8 +118,7 @@ module HTMLTemplates
               sizeAdjust: 25,
               formatString: 'x: %d, y: %d<br>' +
                 '<span style="display:none;">%s</span>' +
-                '<b>%s</b><br>' +
-                '<img src = "%s" height="50px"><br>' +
+                '<b>%s</b><br>%s<br>' +
                 'Altitude: %d m',
               tooltipLocation: 'n',
               useAxesFormatters: false
@@ -141,7 +140,10 @@ module HTMLTemplates
     return html + javascript
   end
 
-  def get_airline_logo(flight_code)
-    return "http://airlinecodes.info/500px/#{flight_code[0..1]}.png"
+  def get_airline(flight_code)
+    iata_code = flight_code[0..1]
+    IO.foreach('../data/iata_codes.txt') do |line|
+      return line[7..-1] if (line[/^#{iata_code}\b/])
+    end
   end
 end
