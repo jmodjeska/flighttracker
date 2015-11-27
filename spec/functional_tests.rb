@@ -12,13 +12,14 @@ class SimulatorTest < Minitest::Test
   def setup
     @server = CONFIG['server_url']
     @port = CONFIG['server_port']
-    @sim = Simulator.new(:test)
   end
 
   def test_simulator_generates_query_string
     # Format: http:///entry?flight=DL342&altitude=12000
     rgx = /http:\/\/(.*?)entry\?flight\=[A-Z]{2}\d{3}|\d{4}\&altitude\=\d{5}/
-    str = @sim.generate_query_string
+    sim = Simulator.new(:test)
+    str = sim.generate_query_string
+    sim.db_down
     assert_match rgx, str
   end
 
@@ -37,19 +38,30 @@ class SimulatorTest < Minitest::Test
     assert_equal true, hash.first[0] == "aircrafts"
   end
 
-  def test_atc_accepts_first_plans
-    # Expect:
-    # {
-    #  "decision": "accepted",
-    #  "speed": "128"
-    # }
+  def test_realtime_endpoint_returns_minimum_array
+    # Format http:///realtime_tracking_info
+    rgx = /^\[\[(.*?)Final Approach(.*?)\]\,\s\[(.*?)Touchdown(.*?)\]\]$/
+    tracking_url = "http://#{CONFIG['server_url']}:" +
+      "#{CONFIG['server_port']}/realtime_tracking_info"
+    request = URI(tracking_url)
+    response = Net::HTTP.get(request)
+    assert_match rgx, response
+  end
+
+  def test_atc_accepts_first_plane
+    expected_response = '{"decision":"accepted","speed":128}'
+    sim = Simulator.new(:test)
+    response = sim.send_plane
+    sim.db_down
+    assert_equal expected_response, response
   end
 
   def test_atc_diverts_too_close_plane
-    # Expect:
-    # {
-    #  "decision": "rejected",
-    #  "speed": "nil"
-    # }
+    expected_response = '{"decision":"diverted"}'
+    response = ''
+    sim = Simulator.new(:test)
+    5.times { response = sim.send_plane }
+    sim.db_down
+    assert_equal expected_response, response
   end
 end

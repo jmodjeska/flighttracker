@@ -36,6 +36,11 @@ module Constructor
   end
 
   def db_down
-    ActiveRecord::Base.clear_active_connections!
+    begin
+      ActiveRecord::Base.clear_active_connections!
+      File.delete(DB)
+    rescue Errno::ENOENT => e
+      warn "Could not delete the DB #{DB}: #{e}"
+    end
   end
 end

@@ -5,8 +5,10 @@ require 'net/http'
 require 'yaml'
 require 'controllers/atc'
 require 'controllers/tracker'
+require 'models/constructor'
 
 class Simulator
+include Constructor
 
   CONFIG = YAML::load_file('../config/config.yml')
   CONS = YAML::load_file('../config/constants.yml')
@@ -35,6 +37,7 @@ class Simulator
     puts "Sending #{request} ..."
     response = Net::HTTP.get(request)
     puts "-=> Received #{response}\n\n"
+    return response
   end
 
   def send_in_the_planes
