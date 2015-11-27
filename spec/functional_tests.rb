@@ -30,8 +30,7 @@ class SimulatorTest < Minitest::Test
 
   def test_webserver_responds_with_tracking_info
     # Format http:///tracking_info
-    tracking_url = "http://#{CONFIG['server_url']}:" +
-      "#{CONFIG['server_port']}/tracking_info"
+    tracking_url = "http://#{@server}:#{@port}/tracking_info"
     request = URI(tracking_url)
     response = Net::HTTP.get(request)
     hash = JSON.parse(response)
@@ -41,8 +40,7 @@ class SimulatorTest < Minitest::Test
   def test_realtime_endpoint_returns_minimum_array
     # Format http:///realtime_tracking_info
     rgx = /^\[\[(.*?)Final Approach(.*?)\]\,\s\[(.*?)Touchdown(.*?)\]\]$/
-    tracking_url = "http://#{CONFIG['server_url']}:" +
-      "#{CONFIG['server_port']}/realtime_tracking_info"
+    tracking_url = "http://#{@server}:#{@port}/realtime_tracking_info"
     request = URI(tracking_url)
     response = Net::HTTP.get(request)
     assert_match rgx, response
