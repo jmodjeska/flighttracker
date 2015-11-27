@@ -8,6 +8,8 @@
 /test/tmp/
 /test/version_tmp/
 /tmp/
+data/flighttracker.db
+data/flighttracker.log
 
 ## Specific to RubyMotion:
 .dat*
