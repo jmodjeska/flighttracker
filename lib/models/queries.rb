@@ -34,6 +34,10 @@ include Calculations
     Flight.where( 'ingress_time > ?', Time.now - seconds_ago ).as_json
   end
 
+  def airborne_planes
+    Flight.where( 'landing_time > ?', Time.now ).as_json
+  end
+
   def last_plane_info(column)
     Flight.where( :action => 'accepted' ).last.send(column)
   end

@@ -14,7 +14,8 @@ include Constructor
 
   def active_positions
     aircrafts = []
-    recent_planes(@timeframe).each do |flight|
+    planes = ( @timeframe == 0 ? airborne_planes : recent_planes(@timeframe) )
+    planes.each do |flight|
       info = {}
       info['flight'] = flight['flight_code']
 

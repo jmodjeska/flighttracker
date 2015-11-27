@@ -35,11 +35,12 @@ include HTMLTemplates
       tracker = Tracker.new(timeframe.to_i)
       page_content = tracker.active_positions
       return [200, 'application/json', page_content]
+    elsif request.path == '/realtime_tracking_info'
+      tracker = Tracker.new(0)
+      page_content = get_tracker_array(tracker.active_positions).to_s
+      return [200, 'text/plain', page_content]
     elsif request.path == '/'
-      timeframe = request.query["timeframe"] || 720
-      tracker = Tracker.new(timeframe.to_i)
-      page_content = fancy_webpage(tracker.active_positions)
-      return [200, 'text/html', page_content]
+      return [200, 'text/html', fancy_webpage]
     else
       page_content = not_found
       return [404, 'text/html', page_content]

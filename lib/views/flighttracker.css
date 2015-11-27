@@ -11,6 +11,7 @@ body, html {
 
 .jqplot-axis {
   font-size: 14px;
+  color: #ddd;
 }
 
 div.jqplot-bubble-label {
