@@ -42,8 +42,7 @@ include HTMLTemplates
     elsif request.path == '/'
       return [200, 'text/html', fancy_webpage]
     else
-      page_content = not_found
-      return [404, 'text/html', page_content]
+      return [404, 'text/html', not_found]
     end
   end
 end

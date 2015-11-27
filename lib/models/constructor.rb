@@ -6,7 +6,6 @@ module Constructor
   SCHEMA = YAML.load_file('models/db_schema.yml')
   DB = '../data/flighttracker.db'
 
-
   def db_up
     access_or_create_db
     create_table_schema

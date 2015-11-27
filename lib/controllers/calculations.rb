@@ -29,7 +29,6 @@ module Calculations
   def position(ingress_altitude, raw_distance)
     s = slope( ingress_altitude )
     d = Math.sqrt( raw_distance.to_f**2 / ( 1 + s**2 ) )
-    d = raw_distance
     x = (2.1e-12 * d**3) - (4.41e-6 * d**2) + (0.047 * d) + 16000
     y = (2.23e-14 * d**4) - (2e-9 * d**3) + (1.02e-4 * d**2) - (5 * d) + 47000
     return [x, y]
