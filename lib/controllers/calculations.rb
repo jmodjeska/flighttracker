@@ -45,7 +45,7 @@ module Calculations
   def current_speed_fa(time_at_fa, end_time, speed)
     elapsed_time = end_time - time_at_fa
     decel_rate = ( speed - CONS['landing_speed'] ) / time_fa_to_land(speed)
-    return speed - ( decel_rate * elapsed_time )
+    return ( speed - ( decel_rate * elapsed_time ) ).to_i
   end
 
   def altitude(ingress_altitude, ingress_time, end_time, speed)
