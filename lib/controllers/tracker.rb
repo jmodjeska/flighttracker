@@ -123,7 +123,7 @@ include Constructor
 
   def all_metrics
     [ count_planes_in_flight,
-      count_planes_landed,
+      count_planes_landed - 1, # Subtract the test flight
       count_planes_adjusted,
       count_planes_diverted,
       count_errors
