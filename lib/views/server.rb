@@ -96,6 +96,9 @@ class FlightServer < WEBrick::HTTPServlet::AbstractServlet
 end
 
 CONFIG = YAML::load_file('../config/config.yml')
+puts "Initializing DB ..."
+atc = Tracker.new(0)
+sleep 3
 server = WEBrick::HTTPServer.new( :Port => CONFIG['server_port'] )
 server.mount '/', FlightServer
 trap('INT') { server.shutdown }
