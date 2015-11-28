@@ -24,12 +24,8 @@ include Constructor
     return airline + number
   end
 
-  def altitude
-    rand( CONS['altitude_min']..CONS['altitude_max'] )
-  end
-
   def generate_query_string
-    "#{@server}/entry?flight=#{flight_code}&altitude=#{altitude}"
+    "#{@server}/entry?flight=#{flight_code}&altitude=#{CONS['ingress_alt']}"
   end
 
   def send_plane

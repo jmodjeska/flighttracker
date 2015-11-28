@@ -10,7 +10,12 @@ include Constructor
   attr_accessor :ingress_time, :flight_speed
 
   def initialize(flight_code, altitude = 10000)
-    @ingress_time, @altitude = Time.now, altitude
+
+    # TODO: Allow altitude at an arbitrary value. This will require
+    # triangle math in calculations.rb to determine variable descent_distance.
+    # For now, fix altitude at constant value.
+
+    @ingress_time, @altitude = Time.now, CONS['ingress_alt']
     db_up
     prime_database
     record_flight_entry(flight_code, @ingress_time)

@@ -15,7 +15,7 @@ include Calculations
       ingress_time = Time.now - 5000
       Flight.create( {
         :ingress_time        => ingress_time,
-        :ingress_altitude    => 10000,
+        :ingress_altitude    => CONS['ingress_alt'],
         :final_approach_time => ingress_time + 510,
         :landing_time        => ingress_time + 510 + 200,
         :flight_code         => 'XX1234',

@@ -5,14 +5,6 @@ module Calculations
 
   CONS = YAML::load_file("../config/constants.yml")
 
-  def elapsed_time_since_ingress(ingress_time)
-    Time.now - ingress_time
-  end
-
-  def elapsed_time_since_fa(ingress_time, speed)
-    Time.now - ingress_time - time_ingress_to_fa(speed)
-  end
-
   def distance_traveled(speed, start_time, end_time)
     speed * ( end_time - start_time ).to_f
   end
@@ -50,14 +42,13 @@ module Calculations
 
   def altitude(ingress_altitude, ingress_time, end_time, speed)
     if ( speed * ( end_time - ingress_time ) ) <= CONS['descent_distance']
-      descent_duration = CONS['descent_distance'].to_f / speed
-      descent_rate = total_descent( ingress_altitude ) / descent_duration
-      return ingress_altitude -
-        ( elapsed_time_since_ingress( ingress_time ) * descent_rate )
+      descent_duration = ( CONS['descent_distance'].to_f / speed )
+      descent_rate = ( total_descent( ingress_altitude ) / descent_duration )
+      return ingress_altitude - ( ( end_time - ingress_time ) * descent_rate )
     else
-      descent_rate = CONS['fa_altitude'] / time_fa_to_land(speed)
-      return CONS['fa_altitude'] -
-        ( elapsed_time_since_fa( ingress_time, speed ) * descent_rate )
+      descent_rate = ( CONS['fa_altitude'] / time_fa_to_land(speed) )
+      return CONS['fa_altitude'] - ( ( end_time -
+        ( ingress_time + time_ingress_to_fa( speed ) ) ) * descent_rate )
     end
   end
 end

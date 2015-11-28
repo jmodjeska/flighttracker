@@ -8,6 +8,7 @@ require_relative '../lib/simulator.rb'
 class SimulatorTest < Minitest::Test
 
   CONFIG = YAML::load_file("../config/config.yml")
+  CONS = YAML::load_file("../config/constants.yml")
 
   def setup
     @server = CONFIG['server_url']
@@ -61,5 +62,35 @@ class SimulatorTest < Minitest::Test
     5.times { response = sim.send_plane }
     sim.db_down
     assert_equal expected_response, response
+  end
+
+  def test_math_fa_alt_at_correct_time
+    sim = Simulator.new(:test)
+    sim.send_plane
+    t = Tracker.new(0)
+    current_altitude = t.altitude(
+      t.last_plane_info( :ingress_altitude ),
+      t.last_plane_info( :ingress_time ),
+      ( t.last_plane_info( :ingress_time ) + 510 ),
+      t.last_plane_info( :descent_speed )
+    )
+    sim.db_down
+    assert_equal true,
+      ( (CONS['fa_altitude'] - 1)..(CONS['fa_altitude'] + 1) ).include?(
+        current_altitude.to_i )
+  end
+
+  def test_math_plane_lands_at_correct_time
+    sim = Simulator.new(:test)
+    sim.send_plane
+    t = Tracker.new(0)
+    current_altitude = t.altitude(
+      t.last_plane_info( :ingress_altitude ),
+      t.last_plane_info( :ingress_time ),
+      ( t.last_plane_info( :ingress_time ) + 510 + 152 ),
+      t.last_plane_info( :descent_speed )
+    )
+    sim.db_down
+    assert_equal 0, current_altitude.to_i
   end
 end

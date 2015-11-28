@@ -110,10 +110,10 @@ include Constructor
       start_alt = flight.ingress_altitude
       start_time = flight.ingress_time
       speed = flight.descent_speed
+      altitude = altitude( start_alt, start_time, Time.now, speed )
       if ( flight.final_approach_time <= Time.now )
         speed = current_speed_fa(flight.final_approach_time, Time.now, speed)
       end
-      altitude = altitude( start_alt, start_time, Time.now, speed )
       [ flight.flight_code,
         get_airline( flight.flight_code[0..1] ),
         speed,
