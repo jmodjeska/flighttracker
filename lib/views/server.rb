@@ -21,6 +21,10 @@ class FlightServer < WEBrick::HTTPServlet::AbstractServlet
     response.body = body
   end
 
+  def check_for_simulator
+    return ( `pgrep -f simulator.rb`.split("\n").length > 0 ) ? "ON" : "OFF"
+  end
+
   def not_found
     '<h1>Not Found</h1>'
   end
@@ -85,6 +89,10 @@ class FlightServer < WEBrick::HTTPServlet::AbstractServlet
       return [200, 'text/plain', page_content]
     elsif request.path == '/version'
       return [200, 'text/plain', CONFIG['version'].to_s]
+    elsif request.path == '/server_time'
+      return [200, 'text/plain', Time.now.to_s[0..18]]
+    elsif request.path == '/sim_status'
+      return [200, 'text/plain', check_for_simulator]
     elsif request.path == '/'
       index = File.open('views/index.html', 'rb')
       page_content = index.read

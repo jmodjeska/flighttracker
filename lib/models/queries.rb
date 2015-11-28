@@ -72,6 +72,13 @@ include Calculations
     Flight.where( :action => 'diverted' ).count
   end
 
+  def count_errors
+    Flight.where( "action = ? and ( landing_time is ? or
+      final_approach_time is ? or ingress_altitude is ? or
+      descent_speed is ? or ingress_altitude is ? )",
+      'accepted', nil, nil, nil, nil, nil ).count
+  end
+
   def log_table_data
     Flight.last(50)
   end

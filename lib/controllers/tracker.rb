@@ -125,7 +125,8 @@ include Constructor
     [ count_planes_in_flight,
       count_planes_landed,
       count_planes_adjusted,
-      count_planes_diverted
+      count_planes_diverted,
+      count_errors
     ]
   end
 end

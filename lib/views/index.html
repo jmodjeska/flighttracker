@@ -17,7 +17,7 @@
     <!-- jqPlot CSS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/jqPlot/1.0.8/jquery.jqplot.min.css" rel="stylesheet">
 
-    <!-- Custom CSS -->
+    <!-- Bootstrap SB-Admin-2 CSS -->
     <link href="http://ironsummitmedia.github.io/startbootstrap-sb-admin-2/dist/css/sb-admin-2.css" rel="stylesheet">
 
     <style type="text/css">
@@ -84,13 +84,23 @@
         }
 
         .panel-lightblue {
-          border-color: #46b8da;
+          border-color: #5bc0de;
         }
 
         .panel-lightblue .panel-heading {
-          border-color: #46b8da;
+          border-color: #5bc0de;
           color: #fff;
           background-color: #5bc0de;
+        }
+
+        .panel-gray {
+          border-color: #6f5499;
+        }
+
+        .panel-gray .panel-heading {
+          border-color: #6f5499;
+          color: #fff;
+          background-color: #6f5499;
         }
 
         .panel-default>.panel-heading {
@@ -153,7 +163,7 @@
             </div>
             <!-- /.row -->
             <div class="row">
-                <div class="col-lg-3 col-md-6">
+                <div class="col-lg-2 col-md-6">
                     <div class="panel panel-primary">
                         <div class="panel-heading">
                             <div class="row">
@@ -168,7 +178,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6">
+                <div class="col-lg-2 col-md-6">
                     <div class="panel panel-green">
                         <div class="panel-heading">
                             <div class="row">
@@ -183,7 +193,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6">
+                <div class="col-lg-2 col-md-6">
                     <div class="panel panel-lightblue">
                         <div class="panel-heading">
                             <div class="row">
@@ -198,7 +208,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6">
+                <div class="col-lg-2 col-md-6">
                     <div class="panel panel-yellow">
                         <div class="panel-heading">
                             <div class="row">
@@ -208,6 +218,38 @@
                                 <div class="col-xs-9 text-right">
                                     <div class="huge" id="metric_divert">--</div>
                                     <div>Diversions</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <div class="panel panel-red">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <i class="fa fa-warning fa-5x"></i>
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge" id="metric_errors">--</div>
+                                    <div>Errors</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <div class="panel panel-gray">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <span id="sim_status_icon">
+                                    <i class="fa fa-toggle-off fa-5x"></i>
+                                    </span>
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge" id="sim_status">--</div>
+                                    <div>New Plane Simulator</div>
                                 </div>
                             </div>
                         </div>
@@ -256,7 +298,8 @@
 
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <i class="fa fa-bar-chart-o fa-fw"></i> Air Traffic Control Log (last 50)
+                            <i class="fa fa-bar-chart-o fa-fw"></i> Air Traffic Control Log
+                            <span style="font-weight: normal;">(last 50)</span>
                         </div>
                         <div class="panel-body">
                             <div class="table-responsive">
@@ -300,31 +343,50 @@
             var metric_data = $.get('/realtime_metric_info');
             var inflight_data = $.get('/realtime_inflight_info');
             var log_data = $.get('/realtime_log_info');
+            var server_time = $.get('/server_time');
+
+            server_time.success(function(result) {
+              // console.log(result);
+              var server_time = result;
+              $("#time").empty().append(server_time);
+            });
 
             inflight_data.success(function(result) {
               // console.log(result);
-              var inflight_table_data = result
-              $("#inflight_table").empty().append(inflight_table_data)
+              var inflight_table_data = result;
+              $("#inflight_table").empty().append(inflight_table_data);
             });
 
             log_data.success(function(result) {
               // console.log(result);
-              var log_table_data = result
-              $("#log_table").empty().append(log_table_data)
+              var log_table_data = result;
+              $("#log_table").empty().append(log_table_data);
             });
 
             metric_data.success(function(result) {
               // console.log(result);
-              var metrics = JSON.parse(result)
-              $("#metric_inflight").text(metrics[0])
-              $("#metric_landed").text(metrics[1])
-              $("#metric_adjust").text(metrics[2])
-              $("#metric_divert").text(metrics[3])
+              var metrics = JSON.parse(result);
+              $("#metric_inflight").text(metrics[0]);
+              $("#metric_landed").text(metrics[1]);
+              $("#metric_adjust").text(metrics[2]);
+              $("#metric_divert").text(metrics[3]);
+              $("#metric_errors").text(metrics[4]);
+            });
+
+            var sim = $.get('/sim_status');
+            sim.success(function(result) {
+              var sim_status = result;
+              $("#sim_status").text(sim_status);
+              if (sim_status == "ON") {
+                  $("#sim_status_icon").html('<i class="fa fa-toggle-on fa-5x"></i>');
+              }
+              else {
+                  $("#sim_status_icon").html('<i class="fa fa-toggle-off fa-5x"></i>');
+              }
             });
 
             graph_data.success(function(result) {
               // console.log(result);
-              $("#time").text(timeStamp())
               jQuery('#chart').html('');
               plot1 = $.jqplot('chart',[JSON.parse(result)],{
                 title: '',
@@ -375,28 +437,12 @@
 
           }
 
-          function timeStamp() {
-          // https://gist.github.com/hurjas/2660489
-            var now = new Date();
-            var date = [ now.getFullYear(), now.getMonth() + 1, now.getDate() ];
-            var time = [ now.getHours(), now.getMinutes(), now.getSeconds() ];
-            var suffix = ( time[0] < 12 ) ? "AM" : "PM";
-            time[0] = ( time[0] < 12 ) ? time[0] : time[0] - 12;
-            time[0] = time[0] || 12;
-            for ( var i = 1; i < 3; i++ ) {
-              if ( time[i] < 10 ) {
-                time[i] = "0" + time[i];
-              }
-            }
-            return date.join("-") + " " + time.join(":") + " " + suffix;
-          }
-
-          window.setInterval(update_dashboard, 2000);
+          window.setInterval(update_dashboard, 4000);
 
           var version = $.get('/version');
           version.success(function(result) {
-            var ver = result
-            $("#version").text(ver)
+            var ver = result;
+            $("#version").text(ver);
           });
 
         });
