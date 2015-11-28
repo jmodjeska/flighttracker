@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Flight Tracker</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- jqPlot CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/jqPlot/1.0.8/jquery.jqplot.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="http://ironsummitmedia.github.io/startbootstrap-sb-admin-2/dist/css/sb-admin-2.css" rel="stylesheet">
+
+    <style type="text/css">
+        #page-wrapper {
+          margin: 0;
+        }
+
+        #chart {
+          padding-right: 15px;
+          width: 760px;
+          height: 600px;
+          display: block;
+          overflow: hidden;
+          background-image: url('http://i.imgur.com/SKHjw2L.png');
+          background-position: 54px 10px;
+          background-size: 681px 560px;
+          background-repeat: no-repeat;
+        }
+
+        #vline {
+            position:relative;
+            top:40px;
+            height: 400px;
+            left: 10px;
+            width: 1px;
+            border-left: 1px solid red;
+        }
+
+        .jqplot-axis {
+          font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+          font-size: 14px;
+          color: #444;
+        }
+
+        div.jqplot-bubble-label {
+          font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+          font-size: 14px !important;
+          color: #fff !important;
+        }
+
+        .jqplot-highlighter-tooltip {
+          font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+          background-color: #fff;
+          font-size: 14px;
+          padding: 4px;
+          text-shadow: none;
+        }
+
+        .loading {
+          margin-top: 180px;
+          color: #999;
+          text-align: center;
+        }
+
+        #time {
+          color: #888;
+          float: right;
+          margin-right: 10px;
+          font-weight: normal;
+        }
+
+        .center {
+          text-align: center;
+        }
+
+        .panel-lightblue {
+          border-color: #46b8da;
+        }
+
+        .panel-lightblue .panel-heading {
+          border-color: #46b8da;
+          color: #fff;
+          background-color: #5bc0de;
+        }
+
+        .panel-default>.panel-heading {
+          font-weight: bold;
+        }
+    </style>
+
+    <!-- Custom Fonts -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Flight Tracker v<span id="version"></span></a>
+            </div>
+            <!-- /.navbar-header -->
+
+            <ul class="nav navbar-top-links navbar-right">
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-paper-plane-o fa-fw"></i>  <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">
+                        <li><a href="https://github.com/jmodjeska/flighttracker"><i class="fa fa-github fa-fw"></i> Source Code</a>
+                        </li>
+                        <li><a href="https://twitter.com/jmodjeska"><i class="fa fa-twitter fa-fw"></i> Contact</a>
+                        </li>
+                        <li><a href="http://j.modjeska.us"><i class="fa fa-home fa-fw"></i> Visit</a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-user -->
+                </li>
+                <!-- /.dropdown -->
+            </ul>
+            <!-- /.navbar-top-links -->
+        </nav>
+
+        <div id="page-wrapper">
+            <div class="row">
+                <div class="col-lg-12">
+                    <p style="height: 10px;">&nbsp;</p>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <i class="fa fa-plane fa-5x"></i>
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge" id="metric_inflight">--</div>
+                                    <div>Planes in Flight</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="panel panel-green">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <i class="fa fa-flag-checkered fa-5x"></i>
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge" id="metric_landed">--</div>
+                                    <div>Completed Landings</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="panel panel-lightblue">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <i class="fa fa-tachometer fa-5x"></i>
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge" id="metric_adjust">--</div>
+                                    <div>Speed Adjustments</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="panel panel-yellow">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <i class="fa fa-undo fa-5x"></i>
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge" id="metric_divert">--</div>
+                                    <div>Diversions</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.row -->
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <i class="fa fa-map-marker fa-fw"></i> Planes in Flight
+                            <span id="time">&nbsp;</span>
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body" style="overflow:hidden; margin-right: 20px;">
+                            <div id="chart">
+                                <h1 class="loading">
+                                    Looking for Airplanes ...<br><br>
+                                    <i class="fa fa-plane fa-spin"></i>
+                                </h1>
+                            </div>
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-6 -->
+                <div class="col-lg-6">
+
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <i class="fa fa-bar-chart-o fa-fw"></i> Planes In Flight
+                        </div>
+                        <div class="panel-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-hover table-striped" id="inflight_table">
+                                <tr><td class="center"><i class="fa fa-cog fa-spin"></i></td></tr>
+                                </table>
+                            </div>
+                            <!-- /.table-responsive -->
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <i class="fa fa-bar-chart-o fa-fw"></i> Air Traffic Control Log (last 50)
+                        </div>
+                        <div class="panel-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-hover table-striped" id="log_table">
+                                <tr><td class="center"><i class="fa fa-cog fa-spin"></i></td></tr>
+                                </table>
+                            </div>
+                            <!-- /.table-responsive -->
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+
+                </div>
+                <!-- /.col-lg-6 -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /#page-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+    <!-- jqPlot -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jqPlot/1.0.8/jquery.jqplot.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jqPlot/1.0.8/plugins/jqplot.bubbleRenderer.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jqPlot/1.0.8/plugins/jqplot.highlighter.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+    <!-- Flight Tracker Custom JavaScript -->
+    <script type="text/javascript">
+        $(document).ready(function(){
+
+          function update_dashboard() {
+            var graph_data = $.get('/realtime_tracking_info');
+            var metric_data = $.get('/realtime_metric_info');
+            var inflight_data = $.get('/realtime_inflight_info');
+            var log_data = $.get('/realtime_log_info');
+
+            inflight_data.success(function(result) {
+              // console.log(result);
+              var inflight_table_data = result
+              $("#inflight_table").empty().append(inflight_table_data)
+            });
+
+            log_data.success(function(result) {
+              // console.log(result);
+              var log_table_data = result
+              $("#log_table").empty().append(log_table_data)
+            });
+
+            metric_data.success(function(result) {
+              // console.log(result);
+              var metrics = JSON.parse(result)
+              $("#metric_inflight").text(metrics[0])
+              $("#metric_landed").text(metrics[1])
+              $("#metric_adjust").text(metrics[2])
+              $("#metric_divert").text(metrics[3])
+            });
+
+            graph_data.success(function(result) {
+              // console.log(result);
+              $("#time").text(timeStamp())
+              jQuery('#chart').html('');
+              plot1 = $.jqplot('chart',[JSON.parse(result)],{
+                title: '',
+                grid:{
+                  borderColor: '#eee',
+                  shadow: false,
+                  background: 'transparent'
+                },
+                seriesColors: [ "#337ab7" ],
+                seriesDefaults:{
+                  renderer: $.jqplot.BubbleRenderer,
+                  rendererOptions: {
+                    bubbleAlpha: 0.9,
+                    highlightAlpha: 1.0,
+                    autoscaleBubbles: false
+                  },
+                  shadow: false,
+                  shadowAlpha: 0
+                },
+                highlighter: {
+                  tooltipContentEditor: function (str, seriesIndex, pointIndex) {
+                    return str + "<br><br>";
+                  },
+                  show: true,
+                  showTooltip: true,
+                  tooltipFade: true,
+                  sizeAdjust: 25,
+                  formatString: 'x: %d, y: %d',
+                  tooltipLocation: 'n',
+                  useAxesFormatters: false
+                },
+                axes:{
+                  xaxis: {
+                    min: -5000,
+                    max: 20000
+                  },
+                  yaxis: {
+                    min: -65000,
+                    max: 65000
+                  }
+                }
+              });
+            });
+
+            graph_data.error(function(jqXHR, textStatus, errorThrown) {
+              $("#banner").text(textStatus + ": " + errorThrown);
+            });
+
+          }
+
+          function timeStamp() {
+          // https://gist.github.com/hurjas/2660489
+            var now = new Date();
+            var date = [ now.getFullYear(), now.getMonth() + 1, now.getDate() ];
+            var time = [ now.getHours(), now.getMinutes(), now.getSeconds() ];
+            var suffix = ( time[0] < 12 ) ? "AM" : "PM";
+            time[0] = ( time[0] < 12 ) ? time[0] : time[0] - 12;
+            time[0] = time[0] || 12;
+            for ( var i = 1; i < 3; i++ ) {
+              if ( time[i] < 10 ) {
+                time[i] = "0" + time[i];
+              }
+            }
+            return date.join("-") + " " + time.join(":") + " " + suffix;
+          }
+
+          window.setInterval(update_dashboard, 2000);
+
+          var version = $.get('/version');
+          version.success(function(result) {
+            var ver = result
+            $("#version").text(ver)
+          });
+
+        });
+    </script>
+</body>
+</html>

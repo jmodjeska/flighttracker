@@ -8,6 +8,8 @@ module Queries
 include Models
 include Calculations
 
+  CONS = YAML::load_file('../config/constants.yml')
+
   def prime_database
     if Flight.first.nil?
       ingress_time = Time.now - 5000
@@ -48,5 +50,33 @@ include Calculations
 
   def update_flight_info(column, value)
     Flight.last.update( column => value )
+  end
+
+  def count_planes_in_flight
+    Flight.where(
+      ["action = ? and landing_time >= ?", 'accepted', Time.now] ).count
+  end
+
+  def count_planes_landed
+    Flight.where(
+      ["action = ? and landing_time < ?", 'accepted', Time.now] ).count
+  end
+
+  def count_planes_adjusted
+    Flight.where(
+      ["action = ? and descent_speed < ?", 'accepted', CONS['descent_max']] )
+      .count
+  end
+
+  def count_planes_diverted
+    Flight.where( :action => 'diverted' ).count
+  end
+
+  def log_table_data
+    Flight.last(50)
+  end
+
+  def airborne_table_data
+    Flight.where( ["action = ? and landing_time >= ?", 'accepted', Time.now] )
   end
 end

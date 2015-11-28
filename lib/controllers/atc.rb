@@ -17,7 +17,7 @@ include Constructor
   end
 
   def decision
-    @flight_speed = assign_descent_speed
+    @flight_speed = assign_descent_speed || 0
     if @flight_speed >= CONS['descent_min']
       if record_accepted_flight
         return { :decision => 'accepted', :speed => @flight_speed }
@@ -31,7 +31,8 @@ include Constructor
   end
 
   def assign_descent_speed
-    if last_plane_info( :final_approach_time ) < Time.now
+    if last_plane_info( :final_approach_time ).nil? ||
+      last_plane_info( :final_approach_time ) < Time.now
       return CONS['descent_max']
     else
       proximities = {}
