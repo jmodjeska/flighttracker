@@ -52,6 +52,8 @@ include Constructor
   def find_status(id)
     begin
       case
+      when plane_info_by_id( id, :flight_code )[0..1] == 'XX'
+        return 'test'
       when plane_info_by_id( id, :action ) == 'diverted'
         return 'diverted'
       when plane_info_by_id( id, :landing_time ) < Time.now

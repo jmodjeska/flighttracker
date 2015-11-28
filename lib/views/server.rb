@@ -31,7 +31,8 @@ class FlightServer < WEBrick::HTTPServlet::AbstractServlet
       'final_approach' => 'primary',
       'diverted'       => 'warning',
       'error'          => 'danger',
-      'landed'         => 'success'
+      'landed'         => 'success',
+      'test'           => 'gray'
     }
     th = data_array[0].map { |th| "<th>#{th}</th>" }
     td = data_array[1].map do |tr|
