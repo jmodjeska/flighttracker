@@ -42,6 +42,12 @@ module Calculations
     ( 2 * CONS['fa_distance'].to_f ) / ( speed + CONS['landing_speed'] )
   end
 
+  def current_speed_fa(time_at_fa, end_time, speed)
+    elapsed_time = end_time - time_at_fa
+    decel_rate = ( speed - CONS['landing_speed'] ) / time_fa_to_land(speed)
+    return speed - ( decel_rate * elapsed_time )
+  end
+
   def altitude(ingress_altitude, ingress_time, end_time, speed)
     if ( speed * ( end_time - ingress_time ) ) <= CONS['descent_distance']
       descent_duration = CONS['descent_distance'].to_f / speed

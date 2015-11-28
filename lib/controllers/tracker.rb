@@ -105,12 +105,15 @@ include Constructor
   end
 
   def inflight_table
-    thead = ['Flight #', 'Airline', 'Max Speed', 'Altitude', 'Status']
+    thead = ['Flight #', 'Airline', 'Speed', 'Altitude', 'Status']
     tbody = airborne_table_data.map do |flight|
-      start_alt  = flight.ingress_altitude
+      start_alt = flight.ingress_altitude
       start_time = flight.ingress_time
-      speed      = flight.descent_speed
-      altitude   = altitude( start_alt, start_time, Time.now, speed )
+      speed = flight.descent_speed
+      if ( flight.final_approach_time <= Time.now )
+        speed = current_speed_fa(flight.final_approach_time, Time.now, speed)
+      end
+      altitude = altitude( start_alt, start_time, Time.now, speed )
       [ flight.flight_code,
         get_airline( flight.flight_code[0..1] ),
         speed,
