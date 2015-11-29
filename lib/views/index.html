@@ -37,6 +37,18 @@
           background-repeat: no-repeat;
         }
 
+        #chart2 {
+          padding-right: 15px;
+          width: 760px;
+          height: 200px;
+          display: block;
+          overflow: hidden;
+          background-image: url('http://i.imgur.com/iCzTWbn.png');
+          background-position: 410px 110px;
+          background-size: 330px 70px;
+          background-repeat: no-repeat;
+        }
+
         #vline {
             position:relative;
             top:40px;
@@ -64,12 +76,17 @@
           font-size: 14px;
           padding: 4px;
           text-shadow: none;
+          margin-bottom: 10px;
         }
 
-        .loading {
+        .loading, .loading2 {
           margin-top: 180px;
           color: #999;
           text-align: center;
+        }
+
+        .loading2 {
+          margin-top: 85px;
         }
 
         #time {
@@ -280,10 +297,26 @@
                         <!-- /.panel-body -->
                     </div>
                     <!-- /.panel -->
+
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <i class="fa fa-area-chart fa-fw"></i> Altitude
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                            <div id="chart2">
+                                <h3 class="loading2">
+                                    <i class="fa fa-cog fa-spin"></i>
+                                </h3>
+                            </div>
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
                 </div>
                 <!-- /.col-lg-6 -->
-                <div class="col-lg-6">
 
+                <div class="col-lg-6">
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <i class="fa fa-bar-chart-o fa-fw"></i> Planes in Flight
@@ -412,7 +445,7 @@
                 },
                 highlighter: {
                   tooltipContentEditor: function (str, seriesIndex, pointIndex) {
-                    return str + "<br><br>";
+                    return str;
                   },
                   show: true,
                   showTooltip: true,
@@ -433,10 +466,54 @@
                   }
                 }
               });
+
+              jQuery('#chart2').html('');
+              var json_data = JSON.parse(result);
+              var alt_array = [];
+              $.each(json_data, function(array) {
+                if ( json_data[array][2] != 5 ) {
+                  xzpair = [ json_data[array][0], json_data[array][4] ];
+                  alt_array.push(xzpair);
+                }
+              });
+              plot2 = $.jqplot('chart2', [alt_array],{
+                title:'',
+                grid:{
+                  borderColor: '#eee',
+                  shadow: false,
+                  background: 'transparent'
+                },
+                axes:{
+                  xaxis: {
+                    min: -5000,
+                    max: 20000,
+                    ticks: [[-5000,""], [0,"Final Approach"], [16000,"Ingress"], [20000, ""]],
+                    tickOptions: {
+                      showGridline: false
+                    },
+                  },
+                  yaxis: {
+                    min: 0,
+                    max: 12000
+                  }
+                },
+                seriesDefaults: {
+                  rendererOptions: {
+                    smooth: true
+                  }
+                },
+                series:[
+                  {
+                    showLine:false,
+                    markerOptions: { size: 10, style: "filledCircle" }
+                  }
+                ]
+              });
+
             });
 
             graph_data.error(function(jqXHR, textStatus, errorThrown) {
-              $("#banner").text(textStatus + ": " + errorThrown);
+              $("#time").text(textStatus + ": " + errorThrown);
             });
 
           }

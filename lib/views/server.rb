@@ -77,7 +77,7 @@ class FlightServer < WEBrick::HTTPServlet::AbstractServlet
       return [200, 'text/plain', page_content]
     elsif request.path == '/realtime_metric_info'
       tracker = Tracker.new(0)
-      page_content = tracker.all_metrics.to_s
+      page_content = tracker.dashboard_metrics.to_s
       return [200, 'text/plain', page_content]
     elsif request.path == '/realtime_inflight_info'
       tracker = Tracker.new(0)
