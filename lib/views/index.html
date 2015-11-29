@@ -127,6 +127,10 @@
         .navbar-brand {
           font-weight: bold;
         }
+
+        #errorMessageRow {
+          display: none;
+        }
     </style>
 
     <!-- Custom Fonts -->
@@ -183,6 +187,7 @@
                 <!-- /.col-lg-12 -->
             </div>
             <!-- /.row -->
+
             <div class="row">
                 <div class="col-lg-2 col-md-6">
                     <div class="panel panel-primary">
@@ -253,7 +258,7 @@
                                 </div>
                                 <div class="col-xs-9 text-right">
                                     <div class="huge" id="metric_errors">--</div>
-                                    <div>Errors</div>
+                                    <div>Registration Errors</div>
                                 </div>
                             </div>
                         </div>
@@ -278,15 +283,28 @@
                 </div>
             </div>
             <!-- /.row -->
+            <div class="row" id = "errorMessageRow">
+                <div id="errorMessageContainer" class="col-lg-12">
+                  <div class="alert alert-danger" role="alert" id="errorMessage">
+                      <span class="sr-only"> Error: </span>
+                      <div id="errorMessageBody">
+                          <i class="fa fa-exclamation-circle fa-2x"></i>
+                          <span id="errorText"></span>
+                      </div>
+                  </div>
+                </div>
+            </div>
+            <!-- /.row error -->
+
             <div class="row">
                 <div class="col-lg-6">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <i class="fa fa-map-marker fa-fw"></i> Planes in Flight
+                            <i class="fa fa-map-marker fa-fw"></i> Coordinates
                             <span id="time">&nbsp;</span>
                         </div>
                         <!-- /.panel-heading -->
-                        <div class="panel-body" style="overflow:hidden; margin-right: 20px;">
+                        <div class="panel-body" style="overflow: hidden; margin-right: 20px;">
                             <div id="chart">
                                 <h1 class="loading">
                                     Looking for Airplanes ...<br><br>
@@ -300,10 +318,10 @@
 
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <i class="fa fa-area-chart fa-fw"></i> Altitude
+                            <i class="fa fa-area-chart fa-fw"></i> Altitudes
                         </div>
                         <!-- /.panel-heading -->
-                        <div class="panel-body">
+                        <div class="panel-body" style="overflow: hidden;">
                             <div id="chart2">
                                 <h3 class="loading2">
                                     <i class="fa fa-cog fa-spin"></i>
@@ -424,7 +442,8 @@
 
             graph_data.success(function(result) {
               // console.log(result);
-              jQuery('#chart').html('');
+               $("#errorMessageRow").hide();
+               jQuery('#chart').html('');
               plot1 = $.jqplot('chart',[JSON.parse(result)],{
                 title: '',
                 grid:{
@@ -476,44 +495,50 @@
                   alt_array.push(xzpair);
                 }
               });
-              plot2 = $.jqplot('chart2', [alt_array],{
-                title:'',
-                grid:{
-                  borderColor: '#eee',
-                  shadow: false,
-                  background: 'transparent'
-                },
-                axes:{
-                  xaxis: {
-                    min: -5000,
-                    max: 20000,
-                    ticks: [[-5000,""], [0,"Final Approach"], [16000,"Ingress"], [20000, ""]],
-                    tickOptions: {
-                      showGridline: false
+              if ( alt_array.length < 1 ) {
+                $("#chart2").html('<p>No planes in flight.</p>')
+              }
+              else {
+                  plot2 = $.jqplot('chart2', [alt_array],{
+                    title:'',
+                    grid:{
+                      borderColor: '#eee',
+                      shadow: false,
+                      background: 'transparent'
                     },
-                  },
-                  yaxis: {
-                    min: 0,
-                    max: 12000
-                  }
-                },
-                seriesDefaults: {
-                  rendererOptions: {
-                    smooth: true
-                  }
-                },
-                series:[
-                  {
-                    showLine:false,
-                    markerOptions: { size: 10, style: "filledCircle" }
-                  }
-                ]
-              });
+                    axes:{
+                      xaxis: {
+                        min: -5000,
+                        max: 20000,
+                        ticks: [[-5000,""], [0,"Final Approach"], [16000,"Ingress"], [20000, ""]],
+                        tickOptions: {
+                          showGridline: false
+                        },
+                      },
+                      yaxis: {
+                        min: 0,
+                        max: 12000
+                      }
+                    },
+                    seriesDefaults: {
+                      rendererOptions: {
+                        smooth: true
+                      }
+                    },
+                    series:[
+                      {
+                        showLine:false,
+                        markerOptions: { size: 10, style: "filledCircle" }
+                      }
+                    ]
+                  });
+              }
 
             });
 
             graph_data.error(function(jqXHR, textStatus, errorThrown) {
-              $("#time").text(textStatus + ": " + errorThrown);
+              $("#errorText").text('Connection error ( ' + textStatus + ": " + errorThrown + ').');
+              $("#errorMessageRow").show();
             });
 
           }
