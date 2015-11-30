@@ -25,7 +25,7 @@
           margin: 0;
         }
 
-        #chart {
+        #chart, #chart2 {
           padding-right: 15px;
           width: 760px;
           height: 600px;
@@ -38,24 +38,10 @@
         }
 
         #chart2 {
-          padding-right: 15px;
-          width: 760px;
           height: 200px;
-          display: block;
-          overflow: hidden;
           background-image: url('http://i.imgur.com/iCzTWbn.png');
           background-position: 410px 110px;
           background-size: 330px 70px;
-          background-repeat: no-repeat;
-        }
-
-        #vline {
-            position:relative;
-            top:40px;
-            height: 400px;
-            left: 10px;
-            width: 1px;
-            border-left: 1px solid red;
         }
 
         .jqplot-axis {
@@ -131,6 +117,10 @@
         #errorMessageRow {
           display: none;
         }
+
+        .huge {
+          font-size: 34px;
+        }
     </style>
 
     <!-- Custom Fonts -->
@@ -194,11 +184,11 @@
                         <div class="panel-heading">
                             <div class="row">
                                 <div class="col-xs-3">
-                                    <i class="fa fa-plane fa-5x"></i>
+                                    <i class="fa fa-plane fa-4x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
                                     <div class="huge" id="metric_inflight">--</div>
-                                    <div>Planes in Flight</div>
+                                    <div>In Flight</div>
                                 </div>
                             </div>
                         </div>
@@ -209,11 +199,11 @@
                         <div class="panel-heading">
                             <div class="row">
                                 <div class="col-xs-3">
-                                    <i class="fa fa-flag-checkered fa-5x"></i>
+                                    <i class="fa fa-flag-checkered fa-4x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
                                     <div class="huge" id="metric_landed">--</div>
-                                    <div>Completed Landings</div>
+                                    <div>Landings</div>
                                 </div>
                             </div>
                         </div>
@@ -224,11 +214,11 @@
                         <div class="panel-heading">
                             <div class="row">
                                 <div class="col-xs-3">
-                                    <i class="fa fa-tachometer fa-5x"></i>
+                                    <i class="fa fa-tachometer fa-4x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
                                     <div class="huge" id="metric_adjust">--</div>
-                                    <div>Speed Adjustments</div>
+                                    <div>Adjustments</div>
                                 </div>
                             </div>
                         </div>
@@ -239,7 +229,7 @@
                         <div class="panel-heading">
                             <div class="row">
                                 <div class="col-xs-3">
-                                    <i class="fa fa-undo fa-5x"></i>
+                                    <i class="fa fa-undo fa-4x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
                                     <div class="huge" id="metric_divert">--</div>
@@ -254,11 +244,11 @@
                         <div class="panel-heading">
                             <div class="row">
                                 <div class="col-xs-3">
-                                    <i class="fa fa-warning fa-5x"></i>
+                                    <i class="fa fa-warning fa-4x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
                                     <div class="huge" id="metric_errors">--</div>
-                                    <div>Registration Errors</div>
+                                    <div>ATC Errors</div>
                                 </div>
                             </div>
                         </div>
@@ -270,12 +260,12 @@
                             <div class="row">
                                 <div class="col-xs-3">
                                     <span id="sim_status_icon">
-                                    <i class="fa fa-toggle-off fa-5x"></i>
+                                    <i class="fa fa-toggle-off fa-4x"></i>
                                     </span>
                                 </div>
                                 <div class="col-xs-9 text-right">
                                     <div class="huge" id="sim_status">--</div>
-                                    <div>Inbound Simulator</div>
+                                    <div>Simulator</div>
                                 </div>
                             </div>
                         </div>
@@ -485,7 +475,6 @@
                   }
                 }
               });
-
               jQuery('#chart2').html('');
               var json_data = JSON.parse(result);
               var alt_array = [];
@@ -533,14 +522,11 @@
                     ]
                   });
               }
-
             });
-
             graph_data.error(function(jqXHR, textStatus, errorThrown) {
-              $("#errorText").text('Connection error ( ' + textStatus + ": " + errorThrown + ').');
+              $("#errorText").text('Connection error (' + textStatus + ": " + errorThrown + ').');
               $("#errorMessageRow").show();
             });
-
           }
 
           window.setInterval(update_dashboard, 4000);
@@ -550,7 +536,6 @@
             var ver = result;
             $("#version").text(ver);
           });
-
         });
     </script>
 </body>
