@@ -72,7 +72,7 @@ include Constructor
   def get_tracker_array
     tracker_array = JSON.parse(active_positions)['aircrafts'].map do |flight|
       next if flight['x'].nil? || flight['x'] == 0
-      [ flight['x'], flight['y'], 30, flight['flight'], flight['altitude'] ]
+      [ flight['x'], flight['y'], 25, flight['flight'], flight['altitude'] ]
     end.compact
     tracker_array << [0, 0, 5, '', 800]
     tracker_array << [0, 20000, 5, '', 0]

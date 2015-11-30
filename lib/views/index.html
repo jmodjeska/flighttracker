@@ -57,7 +57,7 @@
 
         div.jqplot-bubble-label {
           font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-          font-size: 14px !important;
+          font-size: 12px !important;
           color: #fff !important;
         }
 
@@ -125,6 +125,10 @@
 
         #errorMessageRow {
           display: none;
+        }
+
+        #errorText {
+          font-size: 14px;
         }
 
         .panel-heading {
@@ -472,7 +476,7 @@
                   show: true,
                   showTooltip: true,
                   tooltipFade: true,
-                  sizeAdjust: 25,
+                  sizeAdjust: 20,
                   formatString: 'x: %d, y: %d',
                   tooltipLocation: 'n',
                   useAxesFormatters: false
@@ -480,7 +484,8 @@
                 axes:{
                   xaxis: {
                     min: -5000,
-                    max: 20000
+                    max: 21000,
+                    ticks: [[-5000,"-5000"], [0,"0"], [5000,"5000"], [10000, "10000"], [15000,"15000"], [20000,"20000"]],
                   },
                   yaxis: {
                     min: -65000,
@@ -498,7 +503,7 @@
                 }
               });
               if ( alt_array.length < 1 ) {
-                $("#chart2").html('<p>No planes in flight.</p>')
+                $("#chart2").html('<p style="font-size: 14px;">No planes in flight.</p>')
               }
               else {
                   plot2 = $.jqplot('chart2', [alt_array],{
