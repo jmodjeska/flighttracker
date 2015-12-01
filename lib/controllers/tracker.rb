@@ -60,7 +60,6 @@ include Constructor
         return 'landed'
       when plane_info_by_id( id, :final_approach_time ) < Time.now
         return 'final_approach'
-        return 'error'
       else
         return 'descent'
       end
