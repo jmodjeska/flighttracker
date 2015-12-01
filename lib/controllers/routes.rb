@@ -43,9 +43,18 @@ module Routes
       return [200, 'text/plain', Time.now.to_s[0..18]]
     when '/sim_status'
       return [200, 'text/plain', check_for_simulator]
+    when '/flighttracker.css'
+      css = File.open('views/flighttracker.css', 'rb')
+      page_content = css.read
+      return [200, 'text/css', page_content]
+    when '/flighttracker.js'
+      js = File.open('views/flighttracker.js', 'rb')
+      page_content = js.read
+      return [200, 'appication/javascript', page_content]
     when '/'
       index = File.open('views/index.html', 'rb')
-      page_content = index.read
+      instruments = File.open('views/instruments.html', 'rb')
+      page_content = index.read.gsub('[-*INSTRUMENTS*-]', instruments.read)
       return [200, 'text/html', page_content]
     else
       return [404, 'text/html', not_found]

@@ -1,0 +1,117 @@
+body {
+  font-size: 12px;
+}
+
+#page-wrapper {
+  margin: 0;
+}
+
+#chart, #chart2 {
+  padding-right: 15px;
+  margin-left: 25px;
+  width: 840px;
+  height: 600px;
+  display: block;
+  overflow: hidden;
+  background-image: url('http://i.imgur.com/SKHjw2L.png');
+  background-position: 54px 10px;
+  background-size: 761px 560px;
+  background-repeat: no-repeat;
+}
+
+#chart2 {
+  height: 200px;
+  background-image: url('http://i.imgur.com/iCzTWbn.png');
+  background-position: 450px 110px;
+  background-size: 330px 70px;
+}
+
+.jqplot-axis {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #444;
+}
+
+div.jqplot-bubble-label {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 12px !important;
+  color: #fff !important;
+}
+
+.jqplot-highlighter-tooltip {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+  background-color: #fff;
+  font-size: 14px;
+  padding: 4px;
+  text-shadow: none;
+  margin-bottom: 10px;
+}
+
+.loading, .loading2 {
+  margin-top: 180px;
+  color: #999;
+  text-align: center;
+}
+
+.loading2 {
+  margin-top: 85px;
+}
+
+#time {
+  color: #888;
+  float: right;
+  margin-right: 10px;
+  font-weight: normal;
+}
+
+.instrument_desc {
+  font-size: 14px;
+}
+
+.center {
+  text-align: center;
+}
+
+.panel-lightblue {
+  border-color: #5bc0de;
+}
+
+.panel-lightblue .panel-heading {
+  border-color: #5bc0de;
+  color: #fff;
+  background-color: #5bc0de;
+}
+
+.panel-gray {
+  border-color: #6f5499;
+}
+
+.panel-gray .panel-heading {
+  border-color: #6f5499;
+  color: #fff;
+  background-color: #6f5499;
+}
+
+.panel-default>.panel-heading {
+  font-weight: bold;
+}
+
+.navbar-brand {
+  font-weight: bold;
+}
+
+#errorMessageRow {
+  display: none;
+}
+
+#errorText {
+  font-size: 14px;
+}
+
+.panel-heading {
+  font-size: 14px;
+}
+
+.huge {
+  font-size: 34px;
+}
