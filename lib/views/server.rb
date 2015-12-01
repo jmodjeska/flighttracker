@@ -4,7 +4,6 @@ require 'webrick'
 require 'yaml'
 require 'htmlbeautifier'
 require 'nokogiri'
-require 'controllers/atc'
 require 'controllers/tracker'
 require 'controllers/routes'
 
