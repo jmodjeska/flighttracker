@@ -31,11 +31,11 @@ module Routes
       return [200, 'text/plain', page_content]
     when '/realtime_inflight_info'
       tracker = Tracker.new(0)
-      page_content = render_table_data(tracker.datatable(:inflight))
+      page_content = render_table_data(tracker.data_table(:inflight))
       return [200, 'text/plain', page_content]
     when '/realtime_log_info'
       tracker = Tracker.new(0)
-      page_content = render_table_data(tracker.datatable(:log))
+      page_content = render_table_data(tracker.data_table(:log))
       return [200, 'text/plain', page_content]
     when '/version'
       return [200, 'text/plain', CONFIG['version'].to_s]

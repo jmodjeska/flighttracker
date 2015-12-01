@@ -73,12 +73,12 @@ include Constructor
       next if flight['x'].nil? || flight['x'] == 0
       [ flight['x'], flight['y'], 25, flight['flight'], flight['altitude'] ]
     end.compact
-    tracker_array << [0, 0, 5, '', 800]
-    tracker_array << [0, 20000, 5, '', 0]
+    tracker_array << [0, 0, 5, '', 800]    # Final Approach marker
+    tracker_array << [0, 20000, 5, '', 0]  # Landing marker
     return tracker_array
   end
 
-  def datatable(type)
+  def data_table(type)
     thead, tbody = [], []
     case type
     when :inflight
