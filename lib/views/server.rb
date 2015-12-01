@@ -58,7 +58,8 @@ class FlightServer < WEBrick::HTTPServlet::AbstractServlet
   end
 
   def route(request)
-    if request.path == '/entry'
+    case request.path
+    when '/entry'
       page_content = '{ "decision": "ERROR. Missing flight code." }'
       if request.query["flight"]
         atc = Controller.new(request.query["flight"],
@@ -66,34 +67,34 @@ class FlightServer < WEBrick::HTTPServlet::AbstractServlet
         page_content = atc.decision.to_json
       end
       return [200, 'application/json', page_content]
-    elsif request.path == '/tracking_info'
+    when '/tracking_info'
       timeframe = request.query["timeframe"] || 720
       tracker = Tracker.new(timeframe.to_i)
       page_content = tracker.active_positions
       return [200, 'application/json', page_content]
-    elsif request.path == '/realtime_tracking_info'
+    when '/realtime_tracking_info'
       tracker = Tracker.new(0)
       page_content = tracker.get_tracker_array.to_s
       return [200, 'text/plain', page_content]
-    elsif request.path == '/realtime_metric_info'
+    when '/realtime_metric_info'
       tracker = Tracker.new(0)
       page_content = tracker.dashboard_metrics.to_s
       return [200, 'text/plain', page_content]
-    elsif request.path == '/realtime_inflight_info'
+    when '/realtime_inflight_info'
       tracker = Tracker.new(0)
       page_content = render_table_data(tracker.datatable(:inflight))
       return [200, 'text/plain', page_content]
-    elsif request.path == '/realtime_log_info'
+    when '/realtime_log_info'
       tracker = Tracker.new(0)
       page_content = render_table_data(tracker.datatable(:log))
       return [200, 'text/plain', page_content]
-    elsif request.path == '/version'
+    when '/version'
       return [200, 'text/plain', CONFIG['version'].to_s]
-    elsif request.path == '/server_time'
+    when '/server_time'
       return [200, 'text/plain', Time.now.to_s[0..18]]
-    elsif request.path == '/sim_status'
+    when '/sim_status'
       return [200, 'text/plain', check_for_simulator]
-    elsif request.path == '/'
+    when '/'
       index = File.open('views/index.html', 'rb')
       page_content = index.read
       return [200, 'text/html', page_content]
