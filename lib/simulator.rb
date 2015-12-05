@@ -38,11 +38,6 @@ include Constructor
     request = URI(generate_query_string)
     puts "Sending #{request} ..."
     response = Net::HTTP.get(request)
-    if response.match(/error/)
-      # Hack to reduce transient ActiveRecord errors that I can't diagnose
-      puts "-=> Received error response; trying again\n\n"
-      response = Net::HTTP.get(request)
-    end
     puts "-=> Received #{response}\n\n"
     return response
   end

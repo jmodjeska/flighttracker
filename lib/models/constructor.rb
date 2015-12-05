@@ -3,6 +3,7 @@ require 'sqlite3'
 require 'yaml'
 
 module Constructor
+
   SCHEMA = YAML.load_file('models/db_schema.yml')
   DB = '../data/flighttracker.db'
 
