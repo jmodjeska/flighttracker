@@ -1,32 +1,24 @@
-$LOAD_PATH.unshift(File.dirname(__FILE__))
 require 'active_record'
-require 'pg'
+require 'sqlite3'
 require 'yaml'
 
 module Constructor
-
-  SCHEMA = YAML::load_file('models/db_schema.yml')
-  CONFIG_SECRET = YAML::load_file('../config/config_secret.yml')
+  SCHEMA = YAML.load_file('models/db_schema.yml')
+  DB = '../data/flighttracker.db'
 
   def db_up
-    access_db
+    access_or_create_db
     create_table_schema
     return ActiveRecord::Base
   end
 
-  def access_db
+  def access_or_create_db
+    SQLite3::Database.new DB unless File.exist?(DB)
     ActiveRecord::Base.logger = Logger.new("../data/flighttracker.log")
     ActiveRecord::Base.default_timezone = :local
-    db = URI.parse(CONFIG_SECRET['db_url'] || ENV['DATABASE_URL'])
-    pool = ENV["DB_POOL"] || ENV['MAX_THREADS'] || 5
     ActiveRecord::Base.establish_connection(
-      :adapter  => 'postgresql',
-      :host     => db.host,
-      :username => db.user,
-      :password => db.password,
-      :database => db.path[1..-1],
-      :encoding => 'utf8',
-      :pool     => pool
+      :adapter  => 'sqlite3',
+      :database => DB
     )
   end
 
@@ -44,6 +36,11 @@ module Constructor
   end
 
   def db_down
-    ActiveRecord::Base.clear_active_connections!
+    begin
+      ActiveRecord::Base.clear_active_connections!
+      File.delete(DB)
+    rescue Errno::ENOENT => e
+      warn "Could not delete the DB #{DB}: #{e}"
+    end
   end
 end
