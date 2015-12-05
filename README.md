@@ -3,7 +3,7 @@ Air traffic control simulator project for my Ruby class. Calculates X, Y coordin
 
 <img src="https://github.com/jmodjeska/flighttracker/blob/master/docs/images/tracker_screenshot.png" width=900px>
 
-<img src="https://github.com/jmodjeska/flighttracker/blob/master/docs/images/plane_info_screenshot.png" width=200px>
+<img src="https://github.com/jmodjeska/flighttracker/blob/master/docs/images/plane_info_screenshot.png" width=300px>
 
 ## Installation
 ```
