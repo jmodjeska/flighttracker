@@ -23,11 +23,10 @@ include Constructor
     @flight_speed = assign_descent_speed || 0
     @action = ( @flight_speed >= CONS['descent_min'] ) ? 'accepted' : 'diverted'
     begin
-      if register_flight
-        return { :decision => @action, :speed => @flight_speed }
-      else
-        return { :decision => @action }
-      end
+      return { :decision => 'Error writing to database' } unless register_flight
+      decision = { :decision => @action }
+      decision[:speed] = @flight_speed if @action == 'accepted'
+      return decision
     rescue Exception => e
       return { :decision => 'Error recording flight info: ' + e.message.to_s }
     end
