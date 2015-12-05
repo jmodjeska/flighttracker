@@ -8,7 +8,6 @@ gem 'minitest', '5.8.2'
 gem 'ping', '~>0.0.8'
 gem 'sinatra-activerecord'
 gem 'nokogiri'
-gem 'time'
 gem 'puma'
 gem 'net'
 
