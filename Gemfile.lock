@@ -48,7 +48,7 @@ DEPENDENCIES
   activerecord (~> 4.2.4)
   activesupport (~> 4.2.4)
   htmlbeautifier (~> 1.1.1)
-  minitest (= 5.8.2)
+  minitest (~> 5.8.2)
   net
   net-ping (~> 1.7.8)
   nokogiri
