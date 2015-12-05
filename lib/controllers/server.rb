@@ -18,7 +18,7 @@ init = Tracker.new
 sleep 2
 
 get '/' do
-  format_html(erb :index)
+  format_html(erb :index, :locals => { :instruments => instrument_config })
 end
 
 get '/entry' do

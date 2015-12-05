@@ -90,12 +90,11 @@ include Constructor
   def get_tracker_array
     tracker_array = JSON.parse(active_positions)['aircrafts'].map do |flight|
       next if flight['x'].nil?
-      degrees = icon_rotation( flight['x'] )
       [ flight['x'],
         flight['y'],
-        50,
-        "<i class=\"fa fa-plane plane-icon fa-2x fa-rotate-#{degrees}\"></i> " +
-          "<span class=\"plane-label\">#{flight['flight']}</span>",
+        50, # jqPlot bubble size
+        icon_rotation( flight['x'] ),
+        flight['flight'],
         flight['altitude'],
         flight['id']
       ]

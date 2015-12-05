@@ -43,4 +43,15 @@ module Helpers
     array[arr_position] = LABELS[array[arr_position]]
     return array
   end
+
+  def instrument_config
+    return [
+      [ 'metric_inflight', 'primary', 'fa-plane', 'In Flight' ],
+      [ 'metric_landed', 'green', 'fa-flag-checkered', 'Landings' ],
+      [ 'metric_adjust', 'lightblue', 'fa-tachometer', 'Adjustments' ],
+      [ 'metric_divert', 'yellow', 'fa-undo', 'Diversions' ],
+      [ 'metric_errors', 'red', 'fa-warning', 'ATC Errors' ],
+      [ 'sim_status', 'gray', 'fa-toggle-off', 'Inbound Sim' ]
+    ]
+  end
 end
