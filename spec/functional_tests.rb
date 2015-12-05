@@ -87,7 +87,6 @@ class SimulatorTest < Minitest::Test
     current_altitude = t.altitude(
       t.last_plane_info( :ingress_altitude ),
       t.last_plane_info( :ingress_time ),
-      ( t.last_plane_info( :ingress_time ) + 510 + 152 ),
       t.last_plane_info( :descent_speed )
     )
     sim.db_down

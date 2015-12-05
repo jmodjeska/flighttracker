@@ -10,7 +10,7 @@
 /tmp/
 data/flighttracker.db
 data/flighttracker.log
-
+config/config_secret.yml
 ## Specific to RubyMotion:
 .dat*
 .repl_history

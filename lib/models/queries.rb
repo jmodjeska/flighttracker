@@ -25,11 +25,8 @@ include Calculations
     end
   end
 
-  def record_flight_entry(flight_code, ingress_time)
-    Flight.create( {
-      :ingress_time => ingress_time,
-      :flight_code  => flight_code
-    } )
+  def record_flight_entry(values_hash)
+    Flight.create( values_hash )
   end
 
   def recent_planes(seconds_ago)
@@ -46,10 +43,6 @@ include Calculations
 
   def plane_info_by_id(id, column)
     Flight.where( :id => id ).first.send(column)
-  end
-
-  def update_flight_info(column, value)
-    Flight.last.update( column => value )
   end
 
   def count_planes_in_flight

@@ -1,0 +1,56 @@
+<div class="modal fade" id="flight_modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header" id="flight_info_header" style="display: none;">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title"><span id="flight_info_0"></span>
+            &nbsp;
+            <button type="button" id="flight_info_1" class="btn btn-xs">
+            <span id="flight_info_2"></span>
+            </button>
+        </h4>
+      </div>
+      <div class="modal-body">
+        <div class="row" id="flight_info_body_loading">
+          <div class="progress">
+            <div class="progress-bar progress-bar-striped active" role="progressbar"
+            aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:100%">
+            </div>
+          </div>
+          <p>Loading Flight Details</p>
+        </div>
+        <div class="row" style="display: none;" id="flight_info_body">
+            <div class="col-md-6">
+                <div class="flight-image">
+                    <img id="flight_info_3" src="" class="img-responsive thumbnail">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <p></p>
+                <p style="font-size: 15px;">
+                  <i class="fa fa-plane" style="width: 15px"></i>
+                  <b><span id="flight_info_4"></span></b>
+                </p>
+                <p>
+                  <i class="fa fa-globe" style="width: 15px"></i>
+                  <span class="flight-info">ORIGIN</span>
+                  <b><span id="flight_info_5"></span></b>
+                </p>
+                <p>
+                  <i class="fa fa-clock-o" style="width: 15px"></i>
+                  <span class="flight-info">INGRESS</span>
+                  <b><span id="flight_info_6"></span></b>
+                </p>
+                <p>
+                  <i class="fa fa-clock-o" style="width: 15px"></i>
+                  <span class="flight-info">TTL</span>
+                  <b><span id="flight_info_7"></span> sec</b>
+                </p>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

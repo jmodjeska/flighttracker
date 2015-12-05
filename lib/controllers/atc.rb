@@ -7,31 +7,29 @@ include Queries
 include Constructor
 
   CONS = YAML::load_file("../config/constants.yml")
-  attr_accessor :ingress_time, :flight_speed
+  attr_accessor :ingress_time, :flight_speed, :flight_code
 
-  def initialize(flight_code, altitude = 10000)
-
-    # TODO: Allow altitude at an arbitrary value. This will require
-    # triangle math in calculations.rb to determine variable descent_distance.
-    # For now, fix altitude at constant value.
-
-    @ingress_time, @altitude = Time.now, CONS['ingress_alt']
-    db_up
-    prime_database
-    record_flight_entry(flight_code, @ingress_time)
+  def register(flight_code)
+    if flight_code == 0
+      return '{ "decision": "ERROR. Missing flight code." }'
+    else
+      @ingress_time = Time.now
+      @flight_code = flight_code
+      return decision.to_json
+    end
   end
 
   def decision
     @flight_speed = assign_descent_speed || 0
-    if @flight_speed >= CONS['descent_min']
-      if record_accepted_flight
-        return { :decision => 'accepted', :speed => @flight_speed }
+    @action = ( @flight_speed >= CONS['descent_min'] ) ? 'accepted' : 'diverted'
+    begin
+      if register_flight
+        return { :decision => @action, :speed => @flight_speed }
       else
-        return { :decision => 'ERROR. Could not record flight info.' }
+        return { :decision => @action }
       end
-    else
-      update_flight_info('action', 'diverted')
-      return { :decision => 'diverted' }
+    rescue Exception => e
+      return { :decision => 'Error recording flight info: ' + e.message.to_s }
     end
   end
 
@@ -51,15 +49,20 @@ include Constructor
     end
   end
 
-  def record_accepted_flight
+  def register_flight
     flight_info = {
-      :action => 'accepted',
-      :ingress_altitude => @altitude,
-      :descent_speed => @flight_speed,
-      :final_approach_time => @ingress_time + time_ingress_to_fa(@flight_speed),
-      :landing_time => @ingress_time +
-        time_ingress_to_fa(@flight_speed) + time_fa_to_land(@flight_speed)
+      :flight_code => @flight_code,
+      :action => @action,
+      :ingress_time => @ingress_time
     }
-    return true if flight_info.each { |k, v| update_flight_info(k, v) }
+    if @action == 'accepted'
+      flight_info[:ingress_altitude] = CONS['ingress_alt']
+      flight_info[:descent_speed] = @flight_speed
+      flight_info[:final_approach_time] = @ingress_time +
+        time_ingress_to_fa(@flight_speed)
+      flight_info[:landing_time] = @ingress_time +
+          time_ingress_to_fa(@flight_speed) + time_fa_to_land(@flight_speed)
+    end
+    return true if record_flight_entry( flight_info )
   end
 end

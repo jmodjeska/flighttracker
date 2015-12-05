@@ -4,6 +4,8 @@ descent_distance: 65291
 descent_h_distance: 64640
 min_distance: 5200
 landing_speed: 70
+landing_y: 20000
+landing_x: 0
 descent_max: 128
 descent_min: 105
 ingress_alt: 10000
