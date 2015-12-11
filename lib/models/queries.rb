@@ -1,4 +1,3 @@
-$LOAD_PATH.unshift(File.dirname(__FILE__))
 require 'active_support/all'
 require 'active_record'
 require 'controllers/calculations'

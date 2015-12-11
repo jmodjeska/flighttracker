@@ -1,4 +1,3 @@
-$LOAD_PATH.unshift(File.dirname(__FILE__))
 require 'yaml'
 
 module Calculations
@@ -48,7 +47,7 @@ module Calculations
     # For reasons I can't figure out, sometimes the y value is slightly
     # more than the max distance. Until I can figure out why, I'm
     # limiting the ratio to 1 so planes don't go backwards.
-    y_ratio = [( y / max_y ),1].min
+    y_ratio = [( y / max_y ), 1].min
 
     return [x, ( CONS['landing_y'] * y_ratio )]
   end

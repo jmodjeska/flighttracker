@@ -46,7 +46,7 @@ include Constructor
     puts "Running simulator. Control+C to break."
     loop do
       send_plane
-      delay = rand(20..48)
+      delay = rand(20..54)
       delay.times do |sec|
         print " Waiting #{delay - sec} seconds ...\r"
         $stdout.flush
