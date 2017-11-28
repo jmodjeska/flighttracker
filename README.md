@@ -6,7 +6,7 @@ Air traffic control simulator project for my Ruby class. Calculates X, Y coordin
 
 ## Installation
 ```
-bundle install
+bundle update && bundle install
 ```
 
 ## Usage
