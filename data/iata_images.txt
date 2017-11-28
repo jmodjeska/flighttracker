@@ -13,9 +13,9 @@ AL http://www.airlineupdate.com/images/airline_images/airlines_belarus/aircraft/
 AM http://www.airlineupdate.com/images/airline_images/airlines_mexico/aircraft/aeromexico%20b737-700.jpg
 AP http://www.airlineupdate.com/images/airline_images/airlines_italy/aircraft/airone%20a320-200.jpg
 AR http://www.airlineupdate.com/images/airline_images/airlines_argentina/aircraft/aerolineas%20arg%20a340-211.jpg
-AS http://www.airlineupdate.com/content_public/airlines/airlines-usa/alaskaairlines.htm
+AS http://www.airlineupdate.com/images/airline_images/airlines_usa/aircraft/alaska%20b737-400.jpg
 AT http://www.airlineupdate.com/images/airline_images/airlines_morocco/aircraft/royalairmaroc%20b737-85p.jpg
-AV http://www.airlineupdate.com/content_public/airlines/airlines-colombia/avianca.htm
+AV http://www.airlineupdate.com/images/airline_images/airlines_colombia/aircraft/avianca%20a320-214.jpg
 AX http://www.airlineupdate.com/images/airline_images/airlines_usa/aircraft/transstates%20erj145er.jpg
 AY http://www.airlineupdate.com/images/airline_images/airlines_finland/aircraft/finnair%20a319-100.jpg
 AZ http://www.airlineupdate.com/images/airline_images/airlines_italy/aircraft/alitalia%20a320-200.jpg
