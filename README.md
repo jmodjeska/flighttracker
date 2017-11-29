@@ -10,12 +10,12 @@ bundle update && bundle install
 ```
 
 ## Usage
-Start the webserver:
+In one terminal window, start the webserver:
 ```
 cd lib/controllers
 ruby server.rb
 ```
-Start the flight simulator:
+In another terminal window, start the flight simulator:
 ```
 cd lib
 ruby simulator.rb realtime
